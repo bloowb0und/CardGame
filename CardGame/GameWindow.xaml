@@ -23,7 +23,7 @@
                     Card Game
                 </TextBlock>
                 <TextBlock
-                    Margin="350, 5, 0,0"
+                    Margin="250, 5, 0,0"
                     FontSize="18">
                     Turn:
                 </TextBlock>
@@ -66,15 +66,15 @@
                     <StackPanel Margin="30, 0, 0, 0"
                                 HorizontalAlignment="Center">
                         <Image Name="Player1Image"
-                               Source="Images/playerDefault.png"
-                               Width="70" />
+                               Source="playerDefault.png"
+                               Width="70" Cursor="Hand" />
                         <Label Name="Player1Name"
                                Content="player1 (6)"
                                Foreground="#f4b41a"
                                HorizontalAlignment="Center" />
                     </StackPanel>
                     <Image Name="Player1Card"
-                           Source="Images/Cards/bubna_6.JPG"
+                           Source="Cards/bubna_6.JPG"
                            Width="70"
                            Margin="20, 0, 0, 0" />
                 </StackPanel>
