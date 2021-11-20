@@ -7,14 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardGame/Fonts/Projekt Blackbird-v2.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardGame/Fonts/Rockstar-ExtraBold.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardGame/Fonts/Thunder-LC.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardGame/Images/playerDefault.png" afterDir="false" />
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Added fonts, default images for players, added visual appearance of game.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/App.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardGame/CardGame.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/CardGame.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardGame/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/MainWindow.xaml" afterDir="false" />
     </list>
@@ -88,6 +82,14 @@
       <updated>1637431858379</updated>
       <workItem from="1637431874520" duration="1229000" />
     </task>
+    <task id="LOCAL-00001" summary="Added fonts, default images for players, added visual appearance of game.">
+      <created>1637441056529</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637441056529</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,7 +109,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Development" />
+                        <option value="FrontEnd" />
                       </list>
                     </value>
                   </entry>
@@ -126,6 +128,7 @@
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="test commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit." />
+    <MESSAGE value="Added fonts, default images for players, added visual appearance of game." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fonts, default images for players, added visual appearance of game." />
   </component>
 </project>

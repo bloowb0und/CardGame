@@ -85,6 +85,7 @@
       <Content Include="Fonts\Rockstar-ExtraBold.otf" />
       <Content Include="Fonts\Thunder-LC.ttf" />
       <Content Include="Images\playerDefault.png" />
+      <Content Include="Images\valet.jpg" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
