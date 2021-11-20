@@ -8,5 +8,6 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <TextBlock>123</TextBlock>
+      <TextBlock>555</TextBlock>
     </Grid>
 </Window>
