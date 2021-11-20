@@ -66,7 +66,7 @@
                     <StackPanel Margin="30, 0, 0, 0"
                                 HorizontalAlignment="Center">
                         <Image Name="Player1Image"
-                               Source="playerDefault.png"
+                               Source="Images/playerDefault.png"
                                Width="70" Cursor="Hand" />
                         <Label Name="Player1Name"
                                Content="player1 (6)"
@@ -74,14 +74,14 @@
                                HorizontalAlignment="Center" />
                     </StackPanel>
                     <Image Name="Player1Card"
-                           Source="Cards/bubna_6.JPG"
+                           Source="Images/Cards/bubna_12.JPG"
                            Width="70"
                            Margin="20, 0, 0, 0" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="150, 0, 0, 0">
                     <Image Name="Player2Card"
-                           Source="bubna_7.JPG"
+                           Source="Images/Cards/bubna_7.JPG"
                            Width="70"
                            Margin="0, 0, 20, 0" />
                     <StackPanel>
