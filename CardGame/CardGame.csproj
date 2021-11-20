@@ -82,6 +82,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="bubna_7.JPG" />
     <Content Include="Cards\bubna_10.JPG" />
     <Content Include="Cards\bubna_11.JPG" />
     <Content Include="Cards\bubna_12.JPG" />
@@ -122,7 +123,7 @@
     <Content Include="Fonts\Projekt Blackbird-v2.otf" />
     <Content Include="Fonts\Rockstar-ExtraBold.otf" />
     <Content Include="Fonts\Thunder-LC.ttf" />
-    <Content Include="Images\Cards\bubna_10.JPG" />
+    <Resource Include="Images\Cards\bubna_10.JPG" />
     <Content Include="Images\Cards\bubna_11.JPG" />
     <Content Include="Images\Cards\bubna_12.JPG" />
     <Content Include="Images\Cards\bubna_13.JPG" />
@@ -136,7 +137,7 @@
     <Content Include="Images\Cards\cherva_12.JPG" />
     <Content Include="Images\Cards\cherva_13.JPG" />
     <Content Include="Images\Cards\cherva_14.JPG" />
-    <Content Include="Images\Cards\cherva_6.JPG" />
+    <Resource Include="Images\Cards\cherva_6.JPG" />
     <Content Include="Images\Cards\cherva_7.JPG" />
     <Content Include="Images\Cards\cherva_8.JPG" />
     <Content Include="Images\Cards\cherva_9.JPG" />
@@ -145,7 +146,7 @@
     <Content Include="Images\Cards\kresta_12.JPG" />
     <Content Include="Images\Cards\kresta_13.JPG" />
     <Content Include="Images\Cards\kresta_14.JPG" />
-    <Content Include="Images\Cards\kresta_6.JPG" />
+    <Resource Include="Images\Cards\kresta_6.JPG" />
     <Content Include="Images\Cards\kresta_7.JPG" />
     <Content Include="Images\Cards\kresta_8.JPG" />
     <Content Include="Images\Cards\kresta_9.JPG" />
@@ -154,7 +155,7 @@
     <Content Include="Images\Cards\pika_12.JPG" />
     <Content Include="Images\Cards\pika_13.JPG" />
     <Content Include="Images\Cards\pika_14.JPG" />
-    <Content Include="Images\Cards\pika_6.JPG" />
+    <Resource Include="Images\Cards\pika_6.JPG" />
     <Content Include="Images\Cards\pika_7.JPG" />
     <Content Include="Images\Cards\pika_8.JPG" />
     <Content Include="Images\Cards\pika_9.JPG" />
