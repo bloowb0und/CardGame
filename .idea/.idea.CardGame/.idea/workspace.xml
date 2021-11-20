@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="" />
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Made corrections to Player.cs." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +22,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/Card.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CardGame/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/Card.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21C4hcxlYD6MfW7dZt71Q0vCSXT" />
@@ -75,6 +77,14 @@
       <updated>1637431858379</updated>
       <workItem from="1637431874520" duration="1229000" />
     </task>
+    <task id="LOCAL-00001" summary="Made corrections to Player.cs.">
+      <created>1637442905057</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637442905057</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,5 +122,7 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Made corrections to Player.cs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made corrections to Player.cs." />
   </component>
 </project>
