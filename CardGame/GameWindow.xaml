@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="550" Width="900">
+        Title="MainWindow" Height="600" Width="915">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
-            <RowDefinition Height="450" />
+            <RowDefinition Height="462" />
         </Grid.RowDefinitions>
 
         <StackPanel Height="100" Background="#f4b41a" Orientation="Horizontal">
