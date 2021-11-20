@@ -74,14 +74,14 @@
                                HorizontalAlignment="Center" />
                     </StackPanel>
                     <Image Name="Player1Card"
-                           Source="Images/valet.jpg"
+                           Source="Images/Cards/bubna_6.JPG"
                            Width="70"
                            Margin="20, 0, 0, 0" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="150, 0, 0, 0">
                     <Image Name="Player2Card"
-                           Source="Images/valet.jpg"
+                           Source="Images/Cards/cherva_6.JPG"
                            Width="70"
                            Margin="0, 0, 20, 0" />
                     <StackPanel>
@@ -112,7 +112,7 @@
                     </StackPanel>
                 </StackPanel>
                 <Image Name="Player3Card"
-                       Source="Images/valet.jpg"
+                       Source="Images/Cards/pika_6.JPG"
                        Width="70"
                        Margin="20, 0, 0, 0"/>
             </StackPanel>
@@ -123,7 +123,7 @@
                         HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <Image Name="Player4Card"
-                           Source="Images/valet.jpg"
+                           Source="Images/Cards/kresta_6.JPG"
                            Width="70"
                            Margin="0, 0, 20, 0"/>
                     <StackPanel>
@@ -153,14 +153,14 @@
                                HorizontalAlignment="Center" />
                     </StackPanel>
                     <Image Name="Player5Card"
-                           Source="Images/valet.jpg"
+                           Source="Images/Cards/kresta_6.JPG"
                            Width="70"
                            Margin="20, 0, 0, 0" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="150, 0, 0, 0">
                     <Image Name="Player6Card"
-                           Source="Images/valet.jpg"
+                           Source="Images/Cards/bubna_6.JPG"
                            Width="70"
                            Margin="0, 0, 20, 0" />
                     <StackPanel>
