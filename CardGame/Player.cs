@@ -1,22 +1,20 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 public class Player
 {
+	private string _playerName;
+
 	public string PlayerName
 	{
-		get; 
-		set
-		{
-			if (value.Length != 0)
-			{
-				PlayerName = value;
-			};
-		} 
+		get => _playerName;
+		set => _playerName = value;
 	}
+
 	public Stack<Card> PlayerCards { get; set; }
 
-	public Player(string name, Stack cards)
+	public Player(string name, Stack<Card> cards)
 	{
 		PlayerName = name;
 		PlayerCards = cards;
