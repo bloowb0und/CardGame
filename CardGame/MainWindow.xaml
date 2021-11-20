@@ -5,9 +5,137 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="550" Width="900">
     <Grid>
-        <TextBlock>123</TextBlock>
-      <TextBlock>555</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="450"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Height="100" Background="#f4b41a" Orientation="Horizontal">
+            <StackPanel Margin="15, 35, 0, 0"
+                        Orientation="Horizontal"
+                        Width="680">
+                <TextBlock FontSize="25" 
+                           Foreground="#143d59"
+                           FontFamily="Impact">
+                    Card Game
+                </TextBlock>
+                <TextBlock 
+                    Margin="350, 5, 0,0"
+                    FontSize="18"
+                >
+                    Turn:
+                </TextBlock>
+                <Label Name="LblCurrentTurn"
+                       FontSize="18"
+                       FontStyle="Italic"
+                       Content="player1"/>
+            </StackPanel>
+            <Grid Width="140">
+                <Button
+                    HorizontalAlignment="Right"
+                    Height="40"
+                    Width="90"
+                    Background="#143d59"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    FontSize="15">
+                    Next turn
+                </Button>
+            </Grid>
+        </StackPanel>
+        
+        <Grid Grid.Row="1" Background="#143d59">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Row="0" 
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                <StackPanel Margin="30, 0, 0, 0"
+                            HorizontalAlignment="Center">
+                    <Image Name="Player1Image" 
+                        Source="Images/playerDefault.png" 
+                        Width="70"/>
+                    <Label Name="Player1Name" 
+                           Content="player1"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Margin="270, 0, 0, 0">
+                    <Image Name="Player2Image"
+                         Source="Images/playerDefault.png" 
+                         Width="70"/>
+                    <Label Name="Player2Name" 
+                        Content="player2"
+                          Foreground="White"
+                          HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1" 
+                        Grid.Column="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <StackPanel>
+                    <Image Name="Player3Image" 
+                        Source="Images/playerDefault.png" 
+                        Width="70"/>
+                    <Label Name="Player3Name" 
+                           Content="player3"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1" 
+                        Grid.Column="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <StackPanel>
+                <Image Name="Player4Image" 
+                       Source="Images/playerDefault.png" 
+                       Width="70"/>
+                <Label Name="Player4Name" 
+                       Content="player4"
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="2" 
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                <StackPanel Margin="30, 0, 0, 0">
+                    <Image Name="Player5Image" 
+                        Source="Images/playerDefault.png" 
+                         Width="70"/>
+                <Label Name="Player5Name" 
+                       Content="player5"
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Margin="270, 0, 0, 0">
+                    <Image Name="Player6Image"
+                        Source="Images/playerDefault.png" 
+                        Width="70"/>
+                    <Label Name="Player6Name" 
+                           Content="player6"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            
+        </Grid>
     </Grid>
 </Window>

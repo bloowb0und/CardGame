@@ -8,7 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CardGame/Fonts/Projekt Blackbird-v2.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CardGame/Fonts/Rockstar-ExtraBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CardGame/Fonts/Thunder-LC.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CardGame/Images/playerDefault.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/CardGame.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/CardGame.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardGame/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/MainWindow.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +26,15 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/Card.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21C4hcxlYD6MfW7dZt71Q0vCSXT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -31,8 +43,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -93,7 +107,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Development" />
+                        <option value="origin/Development" />
                       </list>
                     </value>
                   </entry>
@@ -104,11 +118,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="test commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit." />
   </component>
 </project>
