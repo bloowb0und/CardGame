@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Resized window, added images.">
-      <change beforePath="$PROJECT_DIR$/CardGame/CardGame.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/CardGame.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/Player.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Deleted wrong add new player file." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637451854960</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Made small changes in Game.cs to implement amount of players.">
+      <created>1637457001934</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637457001934</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Deleted wrong add new player file.">
+      <created>1637457133558</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637457133558</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +190,8 @@
     <MESSAGE value="Added cards images." />
     <MESSAGE value="Resized window, added images." />
     <MESSAGE value="Made a visual side of AddPlayerWindow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a visual side of AddPlayerWindow" />
+    <MESSAGE value="Made small changes in Game.cs to implement amount of players." />
+    <MESSAGE value="Deleted wrong add new player file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted wrong add new player file." />
   </component>
 </project>
