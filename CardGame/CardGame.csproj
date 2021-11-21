@@ -133,6 +133,7 @@
     <Content Include="Fonts\Projekt Blackbird-v2.otf" />
     <Content Include="Fonts\Rockstar-ExtraBold.otf" />
     <Content Include="Fonts\Thunder-LC.ttf" />
+    <Content Include="Images\emptySeat.png" />
     <Resource Include="Images\Cards\bubna_10.JPG" />
     <Resource Include="Images\Cards\bubna_11.JPG" />
     <Resource Include="Images\Cards\bubna_12.JPG" />

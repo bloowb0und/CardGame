@@ -7,8 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="">
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Added empty seat, added props to PlayerSettings, refactored GameWindow." />
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Added packages folder to project.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/CardGame.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/CardGame.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/PlayerSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/PlayerSettings.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,15 +24,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Development" />
+        <entry key="$PROJECT_DIR$" value="GameMainChanges" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd824cfb55004855b9e6d51b008c90e4568778/d6/f772c4f5/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CardGame/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CardGame/Card.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd824cfb55004855b9e6d51b008c90e4568778/bf/3ad20ed6/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/29/51b22005/EventRoute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/07/16af5934/BitmapImage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/83/72c923b4/ImageSourceConverter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21C4hcxlYD6MfW7dZt71Q0vCSXT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -35,11 +46,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.40411702" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.43355703" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -151,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637457310171</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added packages folder to project.">
+      <created>1637524612262</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637524612262</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +218,7 @@
     <MESSAGE value="Made small changes in Game.cs to implement amount of players." />
     <MESSAGE value="Deleted wrong add new player file." />
     <MESSAGE value="Added Workspace.xml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Workspace.xml." />
+    <MESSAGE value="Added packages folder to project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added packages folder to project." />
   </component>
 </project>
