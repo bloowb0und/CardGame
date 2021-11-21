@@ -14,6 +14,8 @@ namespace CardGame
     /// </summary>
     public partial class MainWindow
     {
+        private bool firstGame = true;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -21,6 +23,13 @@ namespace CardGame
 
         private void OnGameWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            if (!firstGame)
+            {
+                PlayerSettings.ControlPlayersImagesList = new List<Image>();
+                PlayerSettings.ControlPlayersNamesList = new List<Label>();
+                PlayerSettings.ControlPlayersCardImagesList = new List<Image>();
+            }
+
             if (PlayerSettings.AmountOfPlayers >= 2)
             {
                 PlayerSettings.ControlPlayersImagesList.Add(this.Player1Image);
@@ -75,6 +84,70 @@ namespace CardGame
                     PlayerSettings.ControlPlayersCardImagesList[i].Visibility = Visibility.Collapsed;
                 }
             }
+        }
+
+        private void BtnNextTurn_Click(object sender, RoutedEventArgs e)
+        {
+            this.LblCurrentTurn.Content = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerName;
+
+            if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
+            {
+                //no cards left
+                return;
+            }
+
+            PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx] = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Pop();
+
+            //add card image
+            PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].Source =
+                $"{PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx].CardSuit}_{PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx].CardType}.JPG"; //source??
+            PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].IsVisible = true;
+
+            //change cards amount
+            PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx].Content = 
+                $"{Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerName} ({Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count})";
+
+            //last player
+            if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers - 1)
+            {
+                Card maxCardValue = PlayerSettings.roundCards[0];
+                int playerIdx;
+
+                for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
+                {
+                    if (maxCardValue.CardType < PlayerSettings.roundCards[i].CardType)
+                    {
+                        maxCardValue = PlayerSettings.roundCards[i].CardType;
+                        playerIdx = i;
+                    }
+                }
+                foreach (Card card in PlayerSettings.roundCards)
+                {
+                    Game.Players[playerIdx].PlayerCards.Push(card);
+                }
+				
+                //change amount
+                PlayerSettings.ControlPlayersNamesList[playerIdx].Content = 
+                    $"{Game.Players[playerIdx].PlayerName} ({Game.Players[playerIdx].PlayerCards.Count})";
+
+
+                if (Game.Players[playerIdx].PlayerCards.Count == 36)
+                {
+                    //player won
+                }
+
+                //hide cards
+                foreach (Image cardImage in PlayerSettings.PlayerCardImages)
+                {
+                    // cardImage.IsVisible = false;
+                    cardImage.Visibility = Visibility.Hidden;
+                }
+                PlayerSettings.CurrentPlayerIdx = 0;
+                Array.Clear(PlayerSettings.roundCards, 0, PlayerSettings.AmountOfPlayers);
+                return;
+            }
+            //next player turns
+            PlayerSettings.CurrentPlayerIdx++;
         }
     }
 }
