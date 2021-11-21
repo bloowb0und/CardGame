@@ -10,4 +10,9 @@ public class Card
 		CardSuit = suit;
 		CardType = type;
 	}
+	
+	public override string ToString()
+	{
+		return $"{CardSuit}_{CardType}";
+	}
 }
