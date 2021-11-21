@@ -18,7 +18,8 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                // imgDynamic.Source = new BitmapImage(fileUri);
+                PlayerSettings.PlayerPictureURLs.Add(fileUri);
+                // PlayerSettings.Player1PictureURL = fileUri;
             }
         }
 
@@ -28,7 +29,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                // imgDynamic.Source = new BitmapImage(fileUri);
+                PlayerSettings.PlayerPictureURLs.Add(fileUri);
             }
         }
 
@@ -38,7 +39,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                // imgDynamic.Source = new BitmapImage(fileUri);
+                PlayerSettings.PlayerPictureURLs.Add(fileUri);
             }
         }
 
@@ -48,7 +49,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                // imgDynamic.Source = new BitmapImage(fileUri);
+                PlayerSettings.PlayerPictureURLs.Add(fileUri);
             }
         }
 
@@ -58,7 +59,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                // imgDynamic.Source = new BitmapImage(fileUri);
+                PlayerSettings.PlayerPictureURLs.Add(fileUri);
             }
         }
 
@@ -68,7 +69,53 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                // imgDynamic.Source = new BitmapImage(fileUri);
+                PlayerSettings.PlayerPictureURLs.Add(fileUri);
+            }
+        }
+
+        private void OnStartGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            PlayerSettings.AmountOfPlayers = (int) this.myUpDownControl.Value;
+
+            for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
+            {
+                if(i == 0)
+                    PlayerSettings.PlayerNames.Add(this.Player1Name.Text);
+                else if(i == 1)
+                    PlayerSettings.PlayerNames.Add(this.Player2Name.Text);
+                else if(i == 2)
+                    PlayerSettings.PlayerNames.Add(this.Player3Name.Text);
+                else if(i == 3)
+                    PlayerSettings.PlayerNames.Add(this.Player4Name.Text);
+                else if(i == 4)
+                    PlayerSettings.PlayerNames.Add(this.Player5Name.Text);
+                else if(i == 5)
+                    PlayerSettings.PlayerNames.Add(this.Player6Name.Text);
+            }
+
+            MainWindow gameWindow = new MainWindow();
+            gameWindow.ShowDialog();
+            // this.WindowState = WindowState.Minimized;
+        }
+
+        private void SpinBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (this.myUpDownControl.Value == 2)
+            {
+                if(FourPlayersStack != null)
+                    FourPlayersStack.Visibility = Visibility.Collapsed;
+                if(SixPlayersStack != null)
+                    SixPlayersStack.Visibility = Visibility.Collapsed;
+            }
+            else if (this.myUpDownControl.Value == 4)
+            {
+                FourPlayersStack.Visibility = Visibility.Visible;
+                SixPlayersStack.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                FourPlayersStack.Visibility = Visibility.Visible;
+                SixPlayersStack.Visibility = Visibility.Visible;
             }
         }
     }

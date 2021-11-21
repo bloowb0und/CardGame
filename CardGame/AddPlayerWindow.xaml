@@ -52,7 +52,8 @@
                                     Value="2"
                                     Increment="2"
                                     Minimum="2"
-                                    Maximum="6" />
+                                    Maximum="6"
+                                    ValueChanged="SpinBox_OnValueChanged"/>
             </StackPanel>
 
             <StackPanel Margin="0, 50, 0, 0">
@@ -66,13 +67,14 @@
 
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Center">
-                    <StackPanel Name="2PlayersStack">
+                    <StackPanel Name="TwoPlayersStack">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Foreground="White">
                                 Player1:
                             </TextBlock>
-                            <TextBox Width="100"
-                                     Margin="10, 0, 0, 0" />
+                            <TextBox Name="Player1Name"
+                                     Width="100"
+                                     Margin="10, 0, 0, 0"/>
                             <Button Name="Player1PicButton"
                                     Click="Player1PicButton_Click"
                                     Content="..."
@@ -84,7 +86,8 @@
                             <TextBlock Foreground="White">
                                 Player2:
                             </TextBlock>
-                            <TextBox Width="100"
+                            <TextBox Name="Player2Name"
+                                     Width="100"
                                      Margin="10, 0, 0, 0" />
                             <Button Name="Player2PicButton"
                                     Click="Player2PicButton_Click"
@@ -93,7 +96,7 @@
                                     Margin="5, 0, 0, 0"/>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Name="4PlayersStack"
+                    <StackPanel Name="FourPlayersStack"
                                 HorizontalAlignment="Center"
                                 Margin="30, 0, 0, 0"
                                 Visibility="Collapsed">
@@ -101,7 +104,8 @@
                             <TextBlock Foreground="White">
                                 Player3:
                             </TextBlock>
-                            <TextBox Width="100"
+                            <TextBox Name="Player3Name"
+                                     Width="100"
                                      Margin="10, 0, 0, 0" />
                             <Button Name="Player3PicButton"
                                     Click="Player3PicButton_Click"
@@ -114,7 +118,8 @@
                             <TextBlock Foreground="White">
                                 Player4:
                             </TextBlock>
-                            <TextBox Width="100"
+                            <TextBox Name="Player4Name"
+                                     Width="100"
                                      Margin="10, 0, 0, 0" />
                             <Button Name="Player4PicButton"
                                     Click="Player4PicButton_Click"
@@ -123,7 +128,7 @@
                                     Margin="5, 0, 0, 0"/>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Name="6PlayersStack"
+                    <StackPanel Name="SixPlayersStack"
                                 HorizontalAlignment="Center"
                                 Margin="30, 0, 0, 0"
                                 Visibility="Collapsed">
@@ -131,7 +136,8 @@
                             <TextBlock Foreground="White">
                                 Player5:
                             </TextBlock>
-                            <TextBox Width="100"
+                            <TextBox Name="Player5Name"
+                                     Width="100"
                                      Margin="10, 0, 0, 0" />
                             <Button Name="Player5PicButton"
                                     Click="Player5PicButton_Click"
@@ -144,7 +150,8 @@
                             <TextBlock Foreground="White">
                                 Player6:
                             </TextBlock>
-                            <TextBox Width="100"
+                            <TextBox Name="Player6Name"
+                                     Width="100"
                                      Margin="10, 0, 0, 0" />
                             <Button Name="Player6PicButton"
                                     Click="Player6PicButton_Click"
@@ -158,13 +165,15 @@
             </StackPanel>
 
             <StackPanel Margin="0, 50, 0, 0">
-
-                <TextBlock HorizontalAlignment="Center"
-                           Foreground="White"
-                           FontSize="15"
-                           Margin="0, 0, 0, 10">
-                    Player nicknames:
-                </TextBlock>
+                
+                <Button Content="START!"
+                        Width="200"
+                        Height="60"
+                        Background="#f4b41a"
+                        Foreground="#143d59"
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Click="OnStartGameButton_Click"/>
             </StackPanel>
 
         </StackPanel>
