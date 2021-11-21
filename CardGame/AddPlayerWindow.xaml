@@ -6,6 +6,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="AddPlayerWindow" Height="600" Width="915">
     <Grid>
         <Grid.RowDefinitions>
@@ -47,7 +48,7 @@
                     Player Amounts:
                 </TextBlock>
 
-                <xctk:IntegerUpDown Name="myUpDownControl"
+                <xctk:IntegerUpDown Name="MyUpDownControl"
                                     Width="100"
                                     Value="2"
                                     Increment="2"

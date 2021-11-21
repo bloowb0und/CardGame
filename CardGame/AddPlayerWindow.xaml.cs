@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 
@@ -10,6 +12,8 @@ namespace CardGame
         public AddPlayerWindow()
         {
             InitializeComponent();
+
+            PlayerSettings.AmountOfPlayers = 2;
         }
 
         private void Player1PicButton_Click(object sender, RoutedEventArgs e)
@@ -18,8 +22,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                PlayerSettings.PlayerPictureURLs.Add(fileUri);
-                // PlayerSettings.Player1PictureURL = fileUri;
+                PlayerSettings.PlayerPictureURLs[0] = fileUri;
             }
         }
 
@@ -29,7 +32,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                PlayerSettings.PlayerPictureURLs.Add(fileUri);
+                PlayerSettings.PlayerPictureURLs[1] = fileUri;
             }
         }
 
@@ -39,7 +42,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                PlayerSettings.PlayerPictureURLs.Add(fileUri);
+                PlayerSettings.PlayerPictureURLs[2] = fileUri;
             }
         }
 
@@ -49,7 +52,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                PlayerSettings.PlayerPictureURLs.Add(fileUri);
+                PlayerSettings.PlayerPictureURLs[3] = fileUri;
             }
         }
 
@@ -59,7 +62,7 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                PlayerSettings.PlayerPictureURLs.Add(fileUri);
+                PlayerSettings.PlayerPictureURLs[4] = fileUri;
             }
         }
 
@@ -69,45 +72,44 @@ namespace CardGame
             if(openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                PlayerSettings.PlayerPictureURLs.Add(fileUri);
+                PlayerSettings.PlayerPictureURLs[5] = fileUri;
             }
         }
 
         private void OnStartGameButton_Click(object sender, RoutedEventArgs e)
         {
-            PlayerSettings.AmountOfPlayers = (int) this.myUpDownControl.Value;
+            PlayerSettings.AmountOfPlayers = (int) this.MyUpDownControl.Value;
+            List<TextBox> controlPlayerNames = new List<TextBox>();
+            
+            controlPlayerNames.Add(this.Player1Name);
+            controlPlayerNames.Add(this.Player2Name);
+            controlPlayerNames.Add(this.Player3Name);
+            controlPlayerNames.Add(this.Player4Name);
+            controlPlayerNames.Add(this.Player5Name);
+            controlPlayerNames.Add(this.Player6Name);
 
             for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
             {
-                if(i == 0)
-                    PlayerSettings.PlayerNames.Add(this.Player1Name.Text);
-                else if(i == 1)
-                    PlayerSettings.PlayerNames.Add(this.Player2Name.Text);
-                else if(i == 2)
-                    PlayerSettings.PlayerNames.Add(this.Player3Name.Text);
-                else if(i == 3)
-                    PlayerSettings.PlayerNames.Add(this.Player4Name.Text);
-                else if(i == 4)
-                    PlayerSettings.PlayerNames.Add(this.Player5Name.Text);
-                else if(i == 5)
-                    PlayerSettings.PlayerNames.Add(this.Player6Name.Text);
+                if (controlPlayerNames[i].Text != String.Empty)
+                    PlayerSettings.PlayerNames.Add(controlPlayerNames[i].Text);
+                else
+                    PlayerSettings.PlayerNames.Add("player" + (i + 1));
             }
 
             MainWindow gameWindow = new MainWindow();
             gameWindow.ShowDialog();
-            // this.WindowState = WindowState.Minimized;
         }
 
         private void SpinBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            if (this.myUpDownControl.Value == 2)
+            if (this.MyUpDownControl.Value == 2)
             {
                 if(FourPlayersStack != null)
                     FourPlayersStack.Visibility = Visibility.Collapsed;
                 if(SixPlayersStack != null)
                     SixPlayersStack.Visibility = Visibility.Collapsed;
             }
-            else if (this.myUpDownControl.Value == 4)
+            else if (this.MyUpDownControl.Value == 4)
             {
                 FourPlayersStack.Visibility = Visibility.Visible;
                 SixPlayersStack.Visibility = Visibility.Collapsed;
