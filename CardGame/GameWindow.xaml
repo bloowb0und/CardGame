@@ -35,6 +35,7 @@
             </StackPanel>
             <Grid Width="140">
                 <Button
+                    Click="BtnNextTurn_Click"
                     HorizontalAlignment="Right"
                     Height="40"
                     Width="90"
