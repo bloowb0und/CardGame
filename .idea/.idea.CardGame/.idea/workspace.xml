@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Deleted wrong add new player file." />
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,12 +24,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/Card.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CardGame/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CardGame/Card.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/Card.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/07/16af5934/BitmapImage.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21C4hcxlYD6MfW7dZt71Q0vCSXT" />
@@ -81,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1637431858379</updated>
       <workItem from="1637431874520" duration="1229000" />
+      <workItem from="1637523699277" duration="347000" />
     </task>
     <task id="LOCAL-00001" summary="Made corrections to Player.cs.">
       <created>1637442905057</created>
@@ -145,14 +144,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637457133558</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Workspace.xml.">
+      <created>1637457310171</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637457310171</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -192,6 +198,7 @@
     <MESSAGE value="Made a visual side of AddPlayerWindow" />
     <MESSAGE value="Made small changes in Game.cs to implement amount of players." />
     <MESSAGE value="Deleted wrong add new player file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted wrong add new player file." />
+    <MESSAGE value="Added Workspace.xml." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Workspace.xml." />
   </component>
 </project>
