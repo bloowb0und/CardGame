@@ -70,11 +70,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddPlayer.xaml" />
     <Page Include="AddPlayerWindow.xaml" />
     <Page Include="GameWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddPlayer.xaml.cs" />
     <Compile Include="AddPlayerWindow.xaml.cs">
       <DependentUpon>AddPlayerWindow.xaml</DependentUpon>
     </Compile>
@@ -82,6 +84,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
@@ -105,9 +108,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\CardGame.exe.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\CardGame.exe" />
+    <Content Include="bin\Debug\CardGame.pdb" />
+    <Content Include="bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="bin\Debug\Xceed.Wpf.AvalonDock.dll" />
+    <Content Include="bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll" />
+    <Content Include="bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll" />
+    <Content Include="bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll" />
+    <Content Include="bin\Debug\Xceed.Wpf.Toolkit.dll" />
+    <Content Include="bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll" />
+    <Content Include="CardGame.csproj.DotSettings.user" />
     <Content Include="Fonts\Projekt Blackbird-v2.otf" />
     <Content Include="Fonts\Rockstar-ExtraBold.otf" />
     <Content Include="Fonts\Thunder-LC.ttf" />
@@ -148,6 +172,9 @@
     <Resource Include="Images\Cards\pika_8.JPG" />
     <Resource Include="Images\Cards\pika_9.JPG" />
     <Resource Include="Images\playerDefault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

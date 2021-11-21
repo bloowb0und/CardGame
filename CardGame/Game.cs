@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CardGame;
 
 public static class Game
 {
@@ -61,10 +62,10 @@ public static class Game
 
 	static void GiveCards(Stack<Card> shuffledCards)
 	{
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
 		{
-			Players.Add(new Player("d"));
-			for (int j = 0; j < 36 / 2; j++)
+			Players.Add(new Player(PlayerSettings.PlayerNames[i]));
+			for (int j = 0; j < 36 / PlayerSettings.AmountOfPlayers; j++)
 			{
 				Players[i].PlayerCards.Push(shuffledCards.Pop());
 			}

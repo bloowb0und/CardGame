@@ -19,4 +19,10 @@ public class Player
 		PlayerName = name;
 		PlayerCards = cards;
 	}
+
+	public Player(string name)
+	{
+		PlayerName = name;
+		PlayerCards = new Stack<Card>();
+	}
 }
