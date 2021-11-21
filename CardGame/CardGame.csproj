@@ -70,13 +70,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AddPlayer.xaml" />
     <Page Include="AddPlayerWindow.xaml" />
     <Page Include="GameWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddPlayer.xaml.cs" />
     <Compile Include="AddPlayerWindow.xaml.cs">
       <DependentUpon>AddPlayerWindow.xaml</DependentUpon>
     </Compile>
