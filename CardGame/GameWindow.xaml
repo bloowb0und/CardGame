@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="600" Width="915">
+        Title="Card game" Height="600" Width="915"
+        Loaded="OnGameWindow_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
@@ -104,11 +105,12 @@
                     <StackPanel>
                     <Image Name="Player3Image"
                            Source="Images/playerDefault.png"
-                           Width="70" />
+                           Width="70"/>
                     <Label Name="Player3Name"
                            Content="player3 (6)"
                            Foreground="White"
-                           HorizontalAlignment="Center"/>
+                           HorizontalAlignment="Center"
+                           Margin="0, 5, 0, 0"/>
                     </StackPanel>
                 </StackPanel>
                 <Image Name="Player3Card"
