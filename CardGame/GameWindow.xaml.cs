@@ -23,11 +23,16 @@ namespace CardGame
         public MainWindow()
         {
             InitializeComponent();
+            
+            this.Hide();
+            var addPlayerWindow = new AddPlayerWindow();
+            addPlayerWindow.Closed += (s, args) => this.Show(); 
+            addPlayerWindow.Show();
         }
 
         private void OnGameWindow_Loaded(object sender, RoutedEventArgs e)
         {
-			PlayerSettings.CurrentPlayerIdx = 0;
+	        PlayerSettings.CurrentPlayerIdx = 0;
 			PlayerSettings.roundCards = new Card[PlayerSettings.AmountOfPlayers];
 
 			if (!firstGame)
@@ -144,6 +149,7 @@ namespace CardGame
 					if (Game.Players[i].PlayerCards.Count + Game.Players[i].PlayerWonCards.Count == 36)
 					{
 						WinStackPanel.Visibility = Visibility.Visible;
+						TxtBlockPlayerWon.Text = $"{Game.Players[i].PlayerName} won! Congratulations!";
 						NextTurnBtn.Foreground = Brushes.Black;
 						NextTurnBtn.IsEnabled = false;
 
@@ -248,6 +254,11 @@ namespace CardGame
 	        }
 
 	        return maxCardsPlayer.PlayerName;
+        }
+
+        private void BtnRestart_OnClick(object sender, RoutedEventArgs e)
+        {
+	        // throw new NotImplementedException();
         }
     }
 }
