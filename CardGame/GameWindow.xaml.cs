@@ -175,7 +175,6 @@ namespace CardGame
 				{
 					player.Foreground = Brushes.White;
 				}
-				PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
 
 				//change amount
 				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
@@ -190,15 +189,15 @@ namespace CardGame
 					player.Foreground = Brushes.White;
 				}
 
-				if (PlayerSettings.CurrentPlayerIdx != PlayerSettings.AmountOfPlayers - 1)
-				{
-
-					PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
-				}
-				else
-				{
-					PlayerSettings.ControlPlayersNamesList[0].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
-				}
+				//if (PlayerSettings.CurrentPlayerIdx != PlayerSettings.AmountOfPlayers - 1)
+				//{
+				//
+				//	PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
+				//}
+				//else
+				//{
+				//	PlayerSettings.ControlPlayersNamesList[0].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
+				//}
 			}
 			
 			//check no cards left in Main stack
@@ -219,7 +218,6 @@ namespace CardGame
 					return;
 				}
             }
-
             PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx] = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Pop();
 
             //add card image
@@ -234,6 +232,24 @@ namespace CardGame
 
 			//next player turns
 			PlayerSettings.CurrentPlayerIdx++;
+
+			int currPlayer = PlayerSettings.CurrentPlayerIdx;
+
+			if (currPlayer == PlayerSettings.AmountOfPlayers)
+			{
+				currPlayer = 0;
+			}
+
+			while ( Game.Players[currPlayer].PlayerCards.Count == 0 &&
+					Game.Players[currPlayer].PlayerWonCards.Count == 0 )
+			{
+				if (++currPlayer == PlayerSettings.AmountOfPlayers)
+				{
+					currPlayer = 0;
+				}
+			}
+			PlayerSettings.ControlPlayersNamesList[currPlayer].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
+
 		}
 
         private static string GetMaxCardsPlayer()
