@@ -26,7 +26,13 @@ namespace CardGame
             
             this.Hide();
             var addPlayerWindow = new AddPlayerWindow();
-            addPlayerWindow.Closed += (s, args) => this.Show(); 
+            addPlayerWindow.Closed += (s, args) =>
+            {
+	            if(addPlayerWindow.IsStarted)
+		            this.Show();
+	            else
+		            this.Close();
+            }; 
             addPlayerWindow.Show();
         }
 
@@ -258,7 +264,18 @@ namespace CardGame
 
         private void BtnRestart_OnClick(object sender, RoutedEventArgs e)
         {
-	        // throw new NotImplementedException();
+	        firstGame = false;
+	        
+	        this.Hide();
+	        var addPlayerWindow = new AddPlayerWindow();
+	        addPlayerWindow.Closed += (s, args) =>
+	        {
+		        if(addPlayerWindow.IsStarted)
+					this.Show();
+		        else
+			        this.Close();
+	        }; 
+	        addPlayerWindow.Show();
         }
     }
 }
