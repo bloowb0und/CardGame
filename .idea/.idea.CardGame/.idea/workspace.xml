@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Merged WinWindow to Development.">
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" afterDir="false" />
     </list>
@@ -55,6 +54,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/83/72c923b4/ImageSourceConverter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/0f/3ef3ebfb/HwndTarget.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd824cfb55004855b9e6d51b008c90e4568778/d6/f772c4f5/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -225,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637543502229</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Made app resizable, edited end of game action, made leader player.">
+      <created>1637548992829</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1637548992829</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +285,7 @@
     <MESSAGE value="Changed the colors of addPlayerWindow, added app icon and fonts." />
     <MESSAGE value="Removed font." />
     <MESSAGE value="Merged WinWindow to Development." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged WinWindow to Development." />
+    <MESSAGE value="Made app resizable, edited end of game action, made leader player." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made app resizable, edited end of game action, made leader player." />
   </component>
 </project>

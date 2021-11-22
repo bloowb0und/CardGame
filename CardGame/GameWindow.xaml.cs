@@ -65,7 +65,7 @@ namespace CardGame
 
             int amountOfCardsForEach = 36 / PlayerSettings.AmountOfPlayers;
             
-            LblLeader.Content = "*";
+            LblLeader.Content = " *";
             
             for (int i = 0; i < 6; i++)
             {

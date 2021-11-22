@@ -23,6 +23,9 @@
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
             
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0, -10, 0, 0">
             <TextBlock FontSize="40"
                        Foreground="#143d59"
                        FontFamily="/Fonts/#Poppins"
@@ -31,6 +34,15 @@
                        HorizontalAlignment="Center">
                 Card Game
             </TextBlock>
+                <TextBlock FontSize="13"
+                           Foreground="#24305e"
+                           HorizontalAlignment="Center"
+                           FontFamily="/Fonts/#Poppins"
+                           FontWeight="Light"
+                           Margin="0, -10, 0, 0">
+                    by Kirill Bluvband and Kristina Panchenko
+                </TextBlock>
+            </StackPanel>
             
             <StackPanel Grid.Column="1" 
                         Orientation="Horizontal"
@@ -47,7 +59,9 @@
                 <Border BorderThickness="2"
                         BorderBrush="#143d59"
                         Height="35"
-                        CornerRadius="15">
+                        CornerRadius="15"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                     <Label Name="LblLeader"
                            FontSize="17"
                            FontStyle="Italic"
@@ -55,7 +69,8 @@
                            FontWeight="Regular"
                            FontFamily="/Fonts/#Poppins"
                            VerticalAlignment="Center"
-                           MinWidth="35"
+                           HorizontalAlignment="Center"
+                           MinWidth="30"
                            Content=" *" />
                 </Border>
             </StackPanel>
