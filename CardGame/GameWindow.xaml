@@ -234,7 +234,7 @@
                         HorizontalAlignment="Center"
                         Grid.ColumnSpan="5"
                         Margin="0, 40, 0, 0"
-                        Visibility="Visible">
+                        Visibility="Collapsed">
                 
                 <Label FontSize="25"
                        Foreground="White"
