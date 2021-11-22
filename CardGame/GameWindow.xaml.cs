@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Mime;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace CardGame
 {
@@ -63,7 +65,7 @@ namespace CardGame
 
             int amountOfCardsForEach = 36 / PlayerSettings.AmountOfPlayers;
             
-            LblCurrentTurn.Content = PlayerSettings.PlayerNames[0];
+            LblLeader.Content = "*";
             
             for (int i = 0; i < 6; i++)
             {
@@ -81,8 +83,6 @@ namespace CardGame
                 {
                     PlayerSettings.ControlPlayersImagesList[i].Source = (ImageSource) imageSourceConverter.ConvertFrom("../../Images/emptySeat.png");
                     PlayerSettings.ControlPlayersImagesList[i].Width = 100;
-                    if (i == 5)
-                        PlayerSettings.ControlPlayersImagesList[i].Margin = new Thickness(120, 0, 0, 0);
                     PlayerSettings.ControlPlayersNamesList[i].Visibility = Visibility.Hidden;
                     PlayerSettings.ControlPlayersCardImagesList[i].Visibility = Visibility.Collapsed;
                 }
@@ -101,6 +101,7 @@ namespace CardGame
 
 			if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers)
 			{
+				this.LblLeader.Content = GetMaxCardsPlayer();
 				PlayerSettings.CurrentPlayerIdx = 0;
 				Array.Clear(PlayerSettings.roundCards, 0, PlayerSettings.AmountOfPlayers);
 
@@ -110,22 +111,6 @@ namespace CardGame
 				{
 					cardImage.Visibility = Visibility.Hidden;
 				}
-
-				//if (PlayerSettings.AmountOfPlayers == 2)
-				//{
-				//	PlayerSettings.ControlPlayersCardImagesList[0].Visibility = Visibility.Collapsed;
-				//	PlayerSettings.ControlPlayersCardImagesList[1].Visibility = Visibility.Hidden;
-				//}
-				//else if (PlayerSettings.AmountOfPlayers == 4)
-				//{
-				//	foreach (Image cardImage in PlayerSettings.ControlPlayersCardImagesList)
-				//	{
-				//		cardImage.Visibility = Visibility.Hidden;
-				//	}
-				//}
-				//else if(PlayerSettings.AmountOfPlayers == 6)
-				//{
-				//}
 
 				foreach (Label player in PlayerSettings.ControlPlayersNamesList)
 				{
@@ -157,19 +142,10 @@ namespace CardGame
 				}
 			}
 
-			if (PlayerSettings.CurrentPlayerIdx + 1 != PlayerSettings.AmountOfPlayers)
-			{
-				this.LblCurrentTurn.Content = Game.Players[PlayerSettings.CurrentPlayerIdx + 1].PlayerName;
-			}
-			else
-			{
-				this.LblCurrentTurn.Content = Game.Players[0].PlayerName;
-			}
-
 			if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
             {
                 //no cards left
-                return;
+                // return;
             }
 
             PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx] = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Pop();
@@ -205,12 +181,29 @@ namespace CardGame
 
                 if (Game.Players[playerIdx].PlayerCards.Count == 36)
                 {
-                    //player won
+	                WinStackPanel.Visibility = Visibility.Visible;
+	                NextTurnBtn.Foreground = Brushes.Black;
+	                NextTurnBtn.IsEnabled = false;
+	                //player won
                 }
 			}
 
 			//next player turns
 			PlayerSettings.CurrentPlayerIdx++;
 		}
-	}
+
+        private static string GetMaxCardsPlayer()
+        {
+	        int maxCardsValue = Game.Players.Max(player => player.PlayerCards.Count);
+	        Player maxCardsPlayer = null;
+
+	        foreach (var player in Game.Players)
+	        {
+		        if (player.PlayerCards.Count == maxCardsValue)
+			        maxCardsPlayer = player;
+	        }
+
+	        return maxCardsPlayer.PlayerName;
+        }
+    }
 }

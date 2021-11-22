@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
-        ResizeMode="NoResize"
-        Title="Card game" Height="600" Width="915"
+        MinHeight="620"
+        MinWidth="930"
+        Title="Card game - Game" Height="620" Width="930"
         Loaded="OnGameWindow_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
-            <RowDefinition Height="465" />
+            <RowDefinition/>
         </Grid.RowDefinitions>
-
+        
         <Grid Background="#f76c6c">
             
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"/>
-                <ColumnDefinition Width="415"/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
             
@@ -47,18 +48,20 @@
                         BorderBrush="#143d59"
                         Height="35"
                         CornerRadius="15">
-                    <Label Name="LblCurrentTurn"
+                    <Label Name="LblLeader"
                            FontSize="17"
                            FontStyle="Italic"
                            Foreground="#143d59"
                            FontWeight="Regular"
                            FontFamily="/Fonts/#Poppins"
                            VerticalAlignment="Center"
-                           Content="player1" />
+                           MinWidth="35"
+                           Content=" *" />
                 </Border>
             </StackPanel>
             <Grid Grid.Column="2">
                 <Button
+                    Name="NextTurnBtn"
                     Click="BtnNextTurn_Click"
                     HorizontalAlignment="Center"
                     Height="40"
@@ -77,149 +80,145 @@
                 </Button>
             </Grid>
         </Grid>
-
-        <Grid Grid.Row="1" Background="#24305e">
+            
+        <Grid Grid.Row="1"
+              Background="#24305e">
+            
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-
+            
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="500" />
-                <ColumnDefinition Width="200" />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
-            <StackPanel Grid.Row="0"
-                        Grid.Column="1"
-                        Orientation="Horizontal">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Margin="30, 0, 0, 0"
-                                HorizontalAlignment="Center">
-                        <Image Name="Player1Image"
-                               Source="Images/playerDefault.png"
-                               Width="70" Cursor="Hand" />
-                        <Label Name="Player1Name"
-                               Content="player1 (6)"
-                               Foreground="#f76c6c"
-                               FontFamily="/Fonts/#Poppins"
-                               HorizontalAlignment="Center" />
-                    </StackPanel>
-                    <Image Name="Player1Card"
-                           Source="Images/Cards/bubna_12.JPG"
-                           Width="70"
-                           Margin="20, 0, 0, 0" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            Margin="150, 0, 0, 0">
-                    <Image Name="Player2Card"
-                           Source="Images/Cards/bubna_7.JPG"
-                           Width="70"
-                           Margin="0, 0, 20, 0" />
-                    <StackPanel>
-                        <Image Name="Player2Image"
-                               Source="Images/playerDefault.png"
-                               Width="70" />
-                        <Label Name="Player2Name"
-                               Content="player2 (6)"
-                               Foreground="White"
-                               FontFamily="/Fonts/#Poppins"
-                               HorizontalAlignment="Center" />
-                    </StackPanel>
-                </StackPanel>
+            
+            <!-- Player6 -->
+            
+            <StackPanel Grid.Row="1">
+                <Image Name="Player6Image"
+                       Source="Images/playerDefault.png"
+                       Width="70"/>
+                <Label Name="Player6Name"
+                       Content="player6 (6)"
+                       Foreground="White"
+                       FontFamily="/Fonts/#Poppins"
+                       HorizontalAlignment="Center"
+                       Margin="0, 5, 0, 0"/>
+            </StackPanel>
+            <Image Grid.Row="1" Grid.Column="1" Name="Player6Card"
+                   Source="Images/Cards/pika_6.JPG"
+                   Width="70"/>
+            
+            <!-- ============ -->
+            
+            <!-- Player1 and Player5 -->
+            
+            <StackPanel Grid.Column="2"
+                        HorizontalAlignment="Center">
+                <Image Name="Player1Image"
+                       Source="Images/playerDefault.png"
+                       Width="70" Cursor="Hand" />
+                <Label Name="Player1Name"
+                       Content="player1 (6)"
+                       Foreground="#f76c6c"
+                       FontFamily="/Fonts/#Poppins"
+                       HorizontalAlignment="Center" />
+            </StackPanel>
+            <Image Grid.Column="3"
+                   Name="Player1Card"
+                   Source="Images/Cards/bubna_12.JPG"
+                   Width="70"/>
+            
+            <StackPanel Grid.Row="2" Grid.Column="2"
+                        HorizontalAlignment="Center">
+                <Image Name="Player5Image"
+                       Source="Images/playerDefault.png"
+                       Width="70" />
+                <Label Name="Player5Name"
+                       Content="player5 (6)"
+                       Foreground="White"
+                       FontFamily="/Fonts/#Poppins"
+                       HorizontalAlignment="Center" />
+            </StackPanel>
+            <Image Grid.Row="2" Grid.Column="3"
+                   Name="Player5Card"
+                   Source="Images/Cards/kresta_6.JPG"
+                   Width="70"/>
+            
+            <!-- ============ -->
+            
+            <!-- Player2 and Player4 -->
+            
+            <Image Grid.Row="0" Grid.Column="5"
+                   Name="Player2Card"
+                   Source="Images/Cards/bubna_7.JPG"
+                   Width="70"/>
+            <StackPanel Grid.Row="0" Grid.Column="6">
+                <Image Name="Player2Image"
+                       Source="Images/playerDefault.png"
+                       Width="70" />
+                <Label Name="Player2Name"
+                       Content="player2 (6)"
+                       Foreground="White"
+                       FontFamily="/Fonts/#Poppins"
+                       HorizontalAlignment="Center" />
             </StackPanel>
             
-            <StackPanel Grid.Row="1"
-                        Grid.Column="2"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                <StackPanel Orientation="Horizontal">
-                    <Image Name="Player3Card"
-                           Source="Images/Cards/kresta_6.JPG"
-                           Width="70"
-                           Margin="0, 0, 20, 0"/>
-                    <StackPanel>
-                    <Image Name="Player3Image"
-                           Source="Images/playerDefault.png"
-                           Width="70" />
-                    <Label Name="Player3Name"
-                           Content="player3 (6)"
-                           Foreground="White"
-                           FontFamily="/Fonts/#Poppins"
-                           HorizontalAlignment="Center" />
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
-
-            <StackPanel Grid.Row="2"
-                        Grid.Column="1"
-                        Orientation="Horizontal">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Margin="30, 0, 0, 0"
-                                HorizontalAlignment="Center">
-                        <Image Name="Player5Image"
-                               Source="Images/playerDefault.png"
-                               Width="70" />
-                        <Label Name="Player5Name"
-                               Content="player5 (6)"
-                               Foreground="White"
-                               FontFamily="/Fonts/#Poppins"
-                               HorizontalAlignment="Center" />
-                    </StackPanel>
-                    <Image Name="Player5Card"
-                           Source="Images/Cards/kresta_6.JPG"
-                           Width="70"
-                           Margin="20, 0, 0, 0" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            Margin="150, 0, 0, 0">
-                    <Image Name="Player4Card"
-                           Source="Images/Cards/bubna_6.JPG"
-                           Width="70"
-                           Margin="0, 0, 20, 0" />
-                    <StackPanel>
-                        <Image Name="Player4Image"
-                               Source="Images/playerDefault.png"
-                               Width="70" />
-                        <Label Name="Player4Name"
-                               Content="player4 (6)"
-                               Foreground="White"
-                               FontFamily="/Fonts/#Poppins"
-                               HorizontalAlignment="Center" />
-                    </StackPanel>
-                </StackPanel>
+            <Image Grid.Row="2" Grid.Column="5"
+                   Name="Player4Card"
+                   Source="Images/Cards/bubna_6.JPG"
+                   Width="70"/>
+            <StackPanel Grid.Row="2" Grid.Column="6">
+                <Image Name="Player4Image"
+                       Source="Images/playerDefault.png"
+                       Width="70" />
+                <Label Name="Player4Name"
+                       Content="player4 (6)"
+                       Foreground="White"
+                       FontFamily="/Fonts/#Poppins"
+                       HorizontalAlignment="Center" />
             </StackPanel>
             
-            <StackPanel Grid.Row="1"
-                        Grid.Column="0"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel>
-                        <Image Name="Player6Image"
-                               Source="Images/playerDefault.png"
-                               Width="70"/>
-                        <Label Name="Player6Name"
-                               Content="player6 (6)"
-                               Foreground="White"
-                               FontFamily="/Fonts/#Poppins"
-                               HorizontalAlignment="Center"
-                               Margin="0, 5, 0, 0"/>
-                    </StackPanel>
-                </StackPanel>
-                <Image Name="Player6Card"
-                       Source="Images/Cards/pika_6.JPG"
-                       Width="70"
-                       Margin="20, 0, 0, 0"/>
+            <!-- ============ -->
+            
+            <!-- Player3 -->
+            
+            <Image Grid.Row="1" Grid.Column="7"
+                   Name="Player3Card"
+                   Source="Images/Cards/kresta_6.JPG"
+                   Width="70"/>
+            <StackPanel Grid.Row="1" Grid.Column="8">
+                <Image Name="Player3Image"
+                       Source="Images/playerDefault.png"
+                       Width="70" />
+                <Label Name="Player3Name"
+                       Content="player3 (6)"
+                       Foreground="White"
+                       FontFamily="/Fonts/#Poppins"
+                       HorizontalAlignment="Center" />
             </StackPanel>
+            
+            <!-- ============ -->
+            
+            <!-- Player won -->
             
             <StackPanel Name="WinStackPanel"
                         Grid.Row="1" 
-                        Grid.Column="1"
+                        Grid.Column="2"
                         HorizontalAlignment="Center"
-                        Margin="0, 35, 0, 0"
-                        > <!-- > Visibility="Collapsed" -->
+                        Grid.ColumnSpan="5"
+                        Margin="0, 40, 0, 0"
+                        Visibility="Collapsed">
                 
                 <Label FontSize="25"
                        Foreground="White"
@@ -247,7 +246,9 @@
                 </Button>
                 
             </StackPanel>
-
+            
+            <!-- ============ -->
+            
         </Grid>
     </Grid>
 </Window>

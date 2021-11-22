@@ -7,8 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Removed font.">
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Merged WinWindow to Development.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +30,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/10/1b8f7307/UIElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/265dca3c1bb44ae19331f699ebe0c1885fe178/6b/fa32ae29/Window.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CardGame/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CardGame/Card.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd824cfb55004855b9e6d51b008c90e4568778/bf/3ad20ed6/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -214,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637539945159</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Merged WinWindow to Development.">
+      <created>1637543502229</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1637543502229</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +277,7 @@
     <MESSAGE value="Merged GameMainChanges into Development." />
     <MESSAGE value="Changed the colors of addPlayerWindow, added app icon and fonts." />
     <MESSAGE value="Removed font." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed font." />
+    <MESSAGE value="Merged WinWindow to Development." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged WinWindow to Development." />
   </component>
 </project>
