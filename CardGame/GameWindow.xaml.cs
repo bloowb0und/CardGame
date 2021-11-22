@@ -97,14 +97,72 @@ namespace CardGame
 
         private void BtnNextTurn_Click(object sender, RoutedEventArgs e)
         {
+			 while (PlayerSettings.CurrentPlayerIdx != PlayerSettings.AmountOfPlayers &&
+					Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0 &&
+					Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count == 0)
+			{
+				PlayerSettings.CurrentPlayerIdx++;
+			}
+
 			var converter = new System.Windows.Media.BrushConverter();
 
 			if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers)
 			{
+
+				// check round winner
+				Card maxCardValue = null;
+				int playerIdx = 0;
+
+				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
+				{
+					if (PlayerSettings.roundCards[i] == null)
+					{
+						continue;
+					}
+					if (maxCardValue == null)
+					{
+						maxCardValue = PlayerSettings.roundCards[i];
+					}
+					if (maxCardValue.CardType < PlayerSettings.roundCards[i].CardType)
+					{
+						maxCardValue.CardType = PlayerSettings.roundCards[i].CardType;
+						playerIdx = i;
+					}
+				}
+				foreach (Card card in PlayerSettings.roundCards)
+				{
+					if (!(card is null))
+					{
+						Game.Players[playerIdx].PlayerWonCards.Push(card);
+					}
+				}
+
+				//check victory
+				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
+				{
+					if (Game.Players[i].PlayerCards.Count + Game.Players[i].PlayerWonCards.Count == 36)
+					{
+						WinStackPanel.Visibility = Visibility.Visible;
+						NextTurnBtn.Foreground = Brushes.Black;
+						NextTurnBtn.IsEnabled = false;
+
+						foreach (Label player in PlayerSettings.ControlPlayersNamesList)
+						{
+							player.Foreground = Brushes.White;
+						}
+
+						foreach (Image cardImage in PlayerSettings.ControlPlayersCardImagesList)
+						{
+							cardImage.Visibility = Visibility.Hidden;
+						}
+
+						PlayerSettings.ControlPlayersNamesList[i].Content = Game.Players[i].PlayerName + $"(36)";
+					}
+				}
+
 				this.LblLeader.Content = GetMaxCardsPlayer();
 				PlayerSettings.CurrentPlayerIdx = 0;
 				Array.Clear(PlayerSettings.roundCards, 0, PlayerSettings.AmountOfPlayers);
-
 
 				//hide cards
 				foreach (Image cardImage in PlayerSettings.ControlPlayersCardImagesList)
@@ -121,7 +179,7 @@ namespace CardGame
 				//change amount
 				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
 				{
-					PlayerSettings.ControlPlayersNamesList[i].Content =	$"{Game.Players[i].PlayerName} ({Game.Players[i].PlayerCards.Count})";
+					PlayerSettings.ControlPlayersNamesList[i].Content =	$"{Game.Players[i].PlayerName} ({Game.Players[i].PlayerCards.Count + Game.Players[i].PlayerWonCards.Count})";
 				}
 			}
 			else
@@ -141,11 +199,24 @@ namespace CardGame
 					PlayerSettings.ControlPlayersNamesList[0].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
 				}
 			}
-
+			
+			//check no cards left in Main stack
 			if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
             {
-                //no cards left
-                // return;
+				//check no cards left in Won stack
+				if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count != 0)
+				{
+					while (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count != 0)
+					{
+						Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Push(Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Pop());
+					}
+				}
+				else
+				{
+					//player has no cards - skip
+					PlayerSettings.CurrentPlayerIdx++;
+					return;
+				}
             }
 
             PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx] = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Pop();
@@ -157,36 +228,8 @@ namespace CardGame
             PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].Visibility = Visibility.Visible;
 
             //change cards amount
-            PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx].Content = 
-                $"{Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerName} ({Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count})";
-
-            //last player
-            if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers - 1)
-            {
-                Card maxCardValue = PlayerSettings.roundCards[0];
-                int playerIdx = 0;
-
-                for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
-                {
-                    if (maxCardValue.CardType < PlayerSettings.roundCards[i].CardType)
-                    {
-                        maxCardValue.CardType = PlayerSettings.roundCards[i].CardType;
-                        playerIdx = i;
-                    }
-                }
-                foreach (Card card in PlayerSettings.roundCards)
-                {
-                    Game.Players[playerIdx].PlayerCards.Push(card);
-                }
-
-                if (Game.Players[playerIdx].PlayerCards.Count == 36)
-                {
-	                WinStackPanel.Visibility = Visibility.Visible;
-	                NextTurnBtn.Foreground = Brushes.Black;
-	                NextTurnBtn.IsEnabled = false;
-	                //player won
-                }
-			}
+             PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx].Content = 
+                $"{Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerName} ({Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count + Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count})";
 
 			//next player turns
 			PlayerSettings.CurrentPlayerIdx++;
@@ -194,12 +237,12 @@ namespace CardGame
 
         private static string GetMaxCardsPlayer()
         {
-	        int maxCardsValue = Game.Players.Max(player => player.PlayerCards.Count);
+	        int maxCardsValue = Game.Players.Max(player => player.PlayerCards.Count + player.PlayerWonCards.Count);
 	        Player maxCardsPlayer = null;
 
 	        foreach (var player in Game.Players)
 	        {
-		        if (player.PlayerCards.Count == maxCardsValue)
+		        if (player.PlayerCards.Count + player.PlayerWonCards.Count == maxCardsValue)
 			        maxCardsPlayer = player;
 	        }
 

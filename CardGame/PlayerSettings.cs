@@ -11,7 +11,6 @@ namespace CardGame
 
         public static List<string> PlayerNames { get; set; }
         public static List<Uri> PlayerPictureURLs { get; set; }
-
         
         public static List<Image> ControlPlayersImagesList { get; set; }
         public static List<Label> ControlPlayersNamesList { get; set; }

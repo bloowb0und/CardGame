@@ -43,7 +43,7 @@ public static class Game
 	static Stack<Card> ShuffleCards()
 	{
 		Stack<Card> ShuffledCards = new Stack<Card>();
-		List<int> usedIdxs = new List<int>();
+		List<int> usedCards = new List<int>();
 		Random r = new Random();
 		int card = 0;
 
@@ -52,9 +52,9 @@ public static class Game
 			do
 			{
 				card = r.Next(0, 36);
-			} while (usedIdxs.Contains(card));
+			} while (usedCards.Contains(card));
 
-			usedIdxs.Add(card);
+			usedCards.Add(card);
 			ShuffledCards.Push(Cards[card]);
 		}
 		return ShuffledCards;
