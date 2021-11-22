@@ -15,8 +15,7 @@ namespace CardGame
     public partial class MainWindow
     {
         ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
-
-        private bool firstGame = true;
+		private bool firstGame = true;
         
         public MainWindow()
         {
@@ -88,44 +87,57 @@ namespace CardGame
                     PlayerSettings.ControlPlayersCardImagesList[i].Visibility = Visibility.Collapsed;
                 }
             }
-        }
+
+			if (PlayerSettings.AmountOfPlayers == 2)
+			{
+				PlayerSettings.ControlPlayersCardImagesList[2].Visibility = Visibility.Collapsed;
+				PlayerSettings.ControlPlayersCardImagesList[3].Visibility = Visibility.Collapsed;
+			}
+		}
 
         private void BtnNextTurn_Click(object sender, RoutedEventArgs e)
         {
-			//if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers - 1)
-			//{
-			//	PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = Brushes.Red;
-			//}
-			//else
-			//{
-			//	for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
-			//	{
-			//		if (i == PlayerSettings.CurrentPlayerIdx)
-			//		{
-			//			PlayerSettings.ControlPlayersNamesList[i + 1].Foreground = Brushes.Red;
-			//		}
-			//		else
-			//		{
-			//			PlayerSettings.ControlPlayersNamesList[i].Foreground = Brushes.White;
-			//		}
-			//	}
-			//}
+			var converter = new System.Windows.Media.BrushConverter();
 
 			if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers)
 			{
 				PlayerSettings.CurrentPlayerIdx = 0;
 				Array.Clear(PlayerSettings.roundCards, 0, PlayerSettings.AmountOfPlayers);
 
+
+				//hide cards
 				foreach (Image cardImage in PlayerSettings.ControlPlayersCardImagesList)
 				{
-					cardImage.Visibility = Visibility.Collapsed;
+					cardImage.Visibility = Visibility.Hidden;
 				}
+
+				//if (PlayerSettings.AmountOfPlayers == 2)
+				//{
+				//	PlayerSettings.ControlPlayersCardImagesList[0].Visibility = Visibility.Collapsed;
+				//	PlayerSettings.ControlPlayersCardImagesList[1].Visibility = Visibility.Hidden;
+				//}
+				//else if (PlayerSettings.AmountOfPlayers == 4)
+				//{
+				//	foreach (Image cardImage in PlayerSettings.ControlPlayersCardImagesList)
+				//	{
+				//		cardImage.Visibility = Visibility.Hidden;
+				//	}
+				//}
+				//else if(PlayerSettings.AmountOfPlayers == 6)
+				//{
+				//}
 
 				foreach (Label player in PlayerSettings.ControlPlayersNamesList)
 				{
 					player.Foreground = Brushes.White;
 				}
-				PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = Brushes.Red;
+				PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
+
+				//change amount
+				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
+				{
+					PlayerSettings.ControlPlayersNamesList[i].Content =	$"{Game.Players[i].PlayerName} ({Game.Players[i].PlayerCards.Count})";
+				}
 			}
 			else
 			{
@@ -133,17 +145,28 @@ namespace CardGame
 				{
 					player.Foreground = Brushes.White;
 				}
-				PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = Brushes.Red;
 
-				if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers - 1)
+				if (PlayerSettings.CurrentPlayerIdx != PlayerSettings.AmountOfPlayers - 1)
 				{
-					PlayerSettings.ControlPlayersNamesList[0].Foreground = Brushes.Red;
+
+					PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx + 1].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
+				}
+				else
+				{
+					PlayerSettings.ControlPlayersNamesList[0].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
 				}
 			}
 
-			this.LblCurrentTurn.Content = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerName;
+			if (PlayerSettings.CurrentPlayerIdx + 1 != PlayerSettings.AmountOfPlayers)
+			{
+				this.LblCurrentTurn.Content = Game.Players[PlayerSettings.CurrentPlayerIdx + 1].PlayerName;
+			}
+			else
+			{
+				this.LblCurrentTurn.Content = Game.Players[0].PlayerName;
+			}
 
-            if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
+			if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
             {
                 //no cards left
                 return;
@@ -179,21 +202,15 @@ namespace CardGame
                 {
                     Game.Players[playerIdx].PlayerCards.Push(card);
                 }
-				
-                //change amount
-                PlayerSettings.ControlPlayersNamesList[playerIdx].Content = 
-                    $"{Game.Players[playerIdx].PlayerName} ({Game.Players[playerIdx].PlayerCards.Count})";
-
 
                 if (Game.Players[playerIdx].PlayerCards.Count == 36)
                 {
                     //player won
                 }
+			}
 
-                //hide cards
-            }
-            //next player turns
-            PlayerSettings.CurrentPlayerIdx++;
+			//next player turns
+			PlayerSettings.CurrentPlayerIdx++;
 		}
 	}
 }
