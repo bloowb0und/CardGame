@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Remade window algorithm.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Remade windows algo for closing." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +54,7 @@
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/265dca3c1bb44ae19331f699ebe0c1885fe178/03/72b3caa8/BroadcastEventHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21C4hcxlYD6MfW7dZt71Q0vCSXT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -233,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637616999345</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Remade windows algo for closing.">
+      <created>1637617508357</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1637617508357</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +291,26 @@
     <MESSAGE value="Merged WinWindow to Development." />
     <MESSAGE value="Made app resizable, edited end of game action, made leader player." />
     <MESSAGE value="Remade window algorithm." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remade window algorithm." />
+    <MESSAGE value="Remade windows algo for closing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remade windows algo for closing." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CardGame/GameWindow.xaml.cs</url>
+          <line>25</line>
+          <properties documentPath="D:\Development\C# Projects\CardGame\CardGame\GameWindow.xaml.cs" initialLine="25" containingFunctionPresentation="constructor 'MainWindow'">
+            <startOffsets>
+              <option value="652" />
+            </startOffsets>
+            <endOffsets>
+              <option value="664" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

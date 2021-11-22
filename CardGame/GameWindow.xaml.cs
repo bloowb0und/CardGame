@@ -263,18 +263,8 @@ namespace CardGame
 
         private void BtnRestart_OnClick(object sender, RoutedEventArgs e)
         {
-	        firstGame = false;
-	        
-	        this.Hide();
-	        var addPlayerWindow = new AddPlayerWindow();
-	        addPlayerWindow.Closed += (s, args) =>
-	        {
-		        if(addPlayerWindow.IsStarted)
-					this.Show();
-		        else
-			        this.Close();
-	        }; 
-	        addPlayerWindow.Show();
+	        System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+	        Application.Current.Shutdown();
         }
     }
 }
