@@ -7,44 +7,49 @@
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="AddPlayerWindow" Height="600" Width="915">
+        
+        Title="Card Game - Start Page" Height="600" Width="915"> <!-- Icon="/Images/AppIcon.ico" -->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="500"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0"
-                    Height="100"
-                    Margin="0, -200, 0, 0"
-                    Background="#f4b41a"
-                    Orientation="Horizontal">
-            <StackPanel>
-                <TextBlock FontSize="55"
-                           Foreground="#143d59"
-                           FontFamily="Impact"
-                           Margin="350, 0, 0, 0">
+              Background="#f76c6c"
+              HorizontalAlignment="Center"
+              Width="915">
+            
+            <TextBlock FontSize="55"
+                       Foreground="#24305e"
+                       FontFamily="/Fonts/#Poppins"
+                       FontWeight="ExtraBold"
+                       HorizontalAlignment="Center">
                     Card Game
                 </TextBlock>
                 <TextBlock FontSize="15"
-                           Foreground="#143d59"
-                           Margin="295, 0, 0, 0">
+                           Foreground="#24305e"
+                           HorizontalAlignment="Center"
+                           FontFamily="/Fonts/#Poppins"
+                           FontWeight="Light"
+                           Margin="0, -15, 0, 0">
                     Developed by Kirill Bluvband and Kristina Panchenko.
                 </TextBlock>
-            </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="1"
-                    Height="500"
-                    Margin="0, -200, 0, 0"
-                    Background="#143d59">
+                    Background="#24305e"
+                    HorizontalAlignment="Center"
+                    Width="915">
 
             <StackPanel Margin="0, 50, 0, 0">
 
                 <TextBlock HorizontalAlignment="Center"
                            Foreground="White"
                            FontSize="15"
-                           Margin="0, 0, 0, 10">
+                           Margin="0, 0, 0, 10"
+                           FontWeight="Medium"
+                           FontFamily="/Fonts/#Poppins">
                     Player Amounts:
                 </TextBlock>
 
@@ -54,7 +59,8 @@
                                     Increment="2"
                                     Minimum="2"
                                     Maximum="6"
-                                    ValueChanged="SpinBox_OnValueChanged"/>
+                                    ValueChanged="SpinBox_OnValueChanged"
+                                    FontFamily="/Fonts/#Poppins"/>
             </StackPanel>
 
             <StackPanel Margin="0, 50, 0, 0">
@@ -62,39 +68,85 @@
                 <TextBlock HorizontalAlignment="Center"
                            Foreground="White"
                            FontSize="15"
-                           Margin="0, 0, 0, 10">
+                           Margin="0, 0, 0, 10"
+                           FontWeight="Medium"
+                           FontFamily="/Fonts/#Poppins">
                     Player nicknames:
                 </TextBlock>
 
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Center">
                     <StackPanel Name="TwoPlayersStack">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="White">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Foreground="White"
+                                       FontFamily="/Fonts/#Poppins"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Width="50">
                                 Player1:
                             </TextBlock>
                             <TextBox Name="Player1Name"
                                      Width="100"
-                                     Margin="10, 0, 0, 0"/>
+                                     Margin="10, 0, 0, 0"
+                                     FontFamily="/Fonts/#Poppins"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player1PicButton"
                                     Click="Player1PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0, 10, 0, 0">
-                            <TextBlock Foreground="White">
+                            <TextBlock Foreground="White"
+                                       FontFamily="/Fonts/#Poppins"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Width="50">
                                 Player2:
                             </TextBlock>
                             <TextBox Name="Player2Name"
                                      Width="100"
-                                     Margin="10, 0, 0, 0" />
+                                     Margin="10, 0, 0, 0"
+                                     FontFamily="/Fonts/#Poppins"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player2PicButton"
                                     Click="Player2PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Name="FourPlayersStack"
@@ -102,31 +154,71 @@
                                 Margin="30, 0, 0, 0"
                                 Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="White">
+                            <TextBlock Foreground="White"
+                                       FontFamily="/Fonts/#Poppins"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Width="50">
                                 Player3:
                             </TextBlock>
                             <TextBox Name="Player3Name"
                                      Width="100"
-                                     Margin="10, 0, 0, 0" />
+                                     Margin="10, 0, 0, 0"
+                                     FontFamily="/Fonts/#Poppins"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player3PicButton"
                                     Click="Player3PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0, 10, 0, 0">
-                            <TextBlock Foreground="White">
+                            <TextBlock Foreground="White"
+                                       FontFamily="/Fonts/#Poppins"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Width="50">
                                 Player4:
                             </TextBlock>
                             <TextBox Name="Player4Name"
                                      Width="100"
-                                     Margin="10, 0, 0, 0" />
+                                     Margin="10, 0, 0, 0"
+                                     FontFamily="/Fonts/#Poppins"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player4PicButton"
                                     Click="Player4PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Name="SixPlayersStack"
@@ -134,31 +226,71 @@
                                 Margin="30, 0, 0, 0"
                                 Visibility="Collapsed">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="White">
+                            <TextBlock Foreground="White"
+                                       FontFamily="/Fonts/#Poppins"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Width="50">
                                 Player5:
                             </TextBlock>
                             <TextBox Name="Player5Name"
                                      Width="100"
-                                     Margin="10, 0, 0, 0" />
+                                     Margin="10, 0, 0, 0"
+                                     FontFamily="/Fonts/#Poppins"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player5PicButton"
                                     Click="Player5PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0, 10, 0, 0">
-                            <TextBlock Foreground="White">
+                            <TextBlock Foreground="White"
+                                       FontFamily="/Fonts/#Poppins"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Width="50">
                                 Player6:
                             </TextBlock>
                             <TextBox Name="Player6Name"
                                      Width="100"
-                                     Margin="10, 0, 0, 0" />
+                                     Margin="10, 0, 0, 0"
+                                     FontFamily="/Fonts/#Poppins"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player6PicButton"
                                     Click="Player6PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -170,11 +302,20 @@
                 <Button Content="START!"
                         Width="200"
                         Height="60"
-                        Background="#f4b41a"
-                        Foreground="#143d59"
+                        Background="#f76c6c"
+                        Foreground="#24305e"
                         FontSize="25"
-                        FontWeight="Bold"
-                        Click="OnStartGameButton_Click"/>
+                        FontFamily="/Fonts/#Poppins"
+                        FontWeight="Black"
+                        Click="OnStartGameButton_Click"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
 
         </StackPanel>
