@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace CardGame
     {
         ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
 		private bool firstGame = true;
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -97,9 +98,9 @@ namespace CardGame
 
         private void BtnNextTurn_Click(object sender, RoutedEventArgs e)
         {
-			 while (PlayerSettings.CurrentPlayerIdx != PlayerSettings.AmountOfPlayers &&
-					Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0 &&
-					Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count == 0)
+			while (PlayerSettings.CurrentPlayerIdx != PlayerSettings.AmountOfPlayers &&
+				   Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0 &&
+				   Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count == 0)
 			{
 				PlayerSettings.CurrentPlayerIdx++;
 			}
@@ -108,7 +109,6 @@ namespace CardGame
 
 			if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers)
 			{
-
 				// check round winner
 				Card maxCardValue = null;
 				int playerIdx = 0;
@@ -122,6 +122,7 @@ namespace CardGame
 					if (maxCardValue == null)
 					{
 						maxCardValue = PlayerSettings.roundCards[i];
+						playerIdx = i;
 					}
 					if (maxCardValue.CardType < PlayerSettings.roundCards[i].CardType)
 					{
