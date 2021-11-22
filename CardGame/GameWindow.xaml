@@ -20,7 +20,8 @@
                         Width="680">
                 <TextBlock FontSize="25"
                            Foreground="#143d59"
-                           FontFamily="Impact">
+                           FontFamily="/Fonts/#Poppins"
+                           FontWeight="Bold">
                     Card Game
                 </TextBlock>
                 <TextBlock
@@ -176,6 +177,32 @@
                                HorizontalAlignment="Center" />
                     </StackPanel>
                 </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Name="WinStackPanel"
+                        Grid.Row="1" 
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        Margin="0, 35, 0, 0"
+                        > <!-- > Visibility="Collapsed" -->
+                
+                <Label FontSize="25"
+                       Foreground="White"
+                       FontFamily="Impact">
+                    <TextBlock TextDecorations="Underline">
+                        Player1 won! Congratulations!
+                    </TextBlock>
+                </Label>
+                
+                <Button Width="130"
+                        Height="30"
+                        Content="PLAY AGAIN"
+                        Foreground="#143d59"
+                        Background="#f4b41a"
+                        FontWeight="Bold"
+                        FontSize="13"
+                        Margin="0, 10, 0, 0"/>
+                
             </StackPanel>
 
         </Grid>

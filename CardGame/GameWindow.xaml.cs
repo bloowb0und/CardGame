@@ -88,6 +88,7 @@ namespace CardGame
 
         private void BtnNextTurn_Click(object sender, RoutedEventArgs e)
         {
+            /*
             this.LblCurrentTurn.Content = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerName;
 
             if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
@@ -148,6 +149,7 @@ namespace CardGame
             }
             //next player turns
             PlayerSettings.CurrentPlayerIdx++;
+            */
         }
     }
 }
