@@ -312,6 +312,7 @@
                     <Button Content="START!"
                             Width="200"
                             Height="60"
+                            Cursor="Hand"
                             Background="#f76c6c"
                             Foreground="#24305e"
                             FontSize="25"

@@ -95,9 +95,8 @@ namespace CardGame
                 else
                     PlayerSettings.PlayerNames.Add("player" + (i + 1));
             }
-
-            MainWindow gameWindow = new MainWindow();
-            gameWindow.ShowDialog();
+            
+            this.Close();
         }
 
         private void SpinBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
