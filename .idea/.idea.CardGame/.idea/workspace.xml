@@ -9,8 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Removed font.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +34,7 @@
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
@@ -45,6 +44,7 @@
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/29/51b22005/EventRoute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/07/16af5934/BitmapImage.cs" root0="SKIP_HIGHLIGHTING" />
@@ -57,6 +57,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/ad/a1542839/MediaContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/265dca3c1bb44ae19331f699ebe0c1885fe178/03/72b3caa8/BroadcastEventHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
