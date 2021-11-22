@@ -9,9 +9,12 @@ namespace CardGame
 {
     public partial class AddPlayerWindow : Window
     {
+        public bool IsStarted;
+        
         public AddPlayerWindow()
         {
             InitializeComponent();
+            IsStarted = false;
 
             PlayerSettings.AmountOfPlayers = 2;
         }
@@ -78,6 +81,7 @@ namespace CardGame
 
         private void OnStartGameButton_Click(object sender, RoutedEventArgs e)
         {
+            this.IsStarted = true;
             PlayerSettings.AmountOfPlayers = (int) this.MyUpDownControl.Value;
             List<TextBox> controlPlayerNames = new List<TextBox>();
             
@@ -95,9 +99,8 @@ namespace CardGame
                 else
                     PlayerSettings.PlayerNames.Add("player" + (i + 1));
             }
-
-            MainWindow gameWindow = new MainWindow();
-            gameWindow.ShowDialog();
+            
+            this.Close();
         }
 
         private void SpinBox_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
