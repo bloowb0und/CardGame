@@ -7,16 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Merged GameMainChanges into Development.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/shelf/Uncommitted_changes_before_Merge_at_11_21_2021_11_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/shelf/Uncommitted_changes_before_Merge_at_11_21_2021_11_38_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="7ba0001e-6093-4430-a6e8-15514c4c8b8e" name="Changes" comment="Removed font.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CardGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/AddPlayerWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/CardGame.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/CardGame.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/Fonts/Projekt Blackbird-v2.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/Fonts/Rockstar-ExtraBold.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/Fonts/Thunder-LC.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CardGame/GameWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/CardGame/Card.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd824cfb55004855b9e6d51b008c90e4568778/bf/3ad20ed6/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,6 +41,8 @@
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/AddPlayerWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/29/51b22005/EventRoute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
@@ -53,6 +50,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/07/16af5934/BitmapImage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/83/72c923b4/ImageSourceConverter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5ad0d672fcd4402a13eebea03d06402381180/0f/3ef3ebfb/HwndTarget.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/GameWindow.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Development/C# Projects/CardGame/CardGame/PlayerSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd824cfb55004855b9e6d51b008c90e4568778/d6/f772c4f5/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -201,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637530791986</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Changed the colors of addPlayerWindow, added app icon and fonts.">
+      <created>1637539923069</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1637539923069</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Removed font.">
+      <created>1637539945159</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1637539945159</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +263,8 @@
     <MESSAGE value="Added Workspace.xml." />
     <MESSAGE value="Added packages folder to project." />
     <MESSAGE value="Merged GameMainChanges into Development." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged GameMainChanges into Development." />
+    <MESSAGE value="Changed the colors of addPlayerWindow, added app icon and fonts." />
+    <MESSAGE value="Removed font." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed font." />
   </component>
 </project>

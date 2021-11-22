@@ -14,42 +14,71 @@
             <RowDefinition Height="465" />
         </Grid.RowDefinitions>
 
-        <StackPanel Height="100" Background="#f4b41a" Orientation="Horizontal">
-            <StackPanel Margin="15, 35, 0, 0"
+        <Grid Background="#f76c6c">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="415"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock FontSize="40"
+                       Foreground="#143d59"
+                       FontFamily="/Fonts/#Poppins"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center">
+                Card Game
+            </TextBlock>
+            
+            <StackPanel Grid.Column="1" 
                         Orientation="Horizontal"
-                        Width="680">
-                <TextBlock FontSize="25"
-                           Foreground="#143d59"
-                           FontFamily="/Fonts/#Poppins"
-                           FontWeight="Bold">
-                    Card Game
-                </TextBlock>
+                        HorizontalAlignment="Center">
                 <TextBlock
-                    Margin="250, 5, 0,0"
-                    FontSize="18">
-                    Turn:
+                    FontSize="20"
+                    Foreground="#143d59"
+                    FontWeight="SemiBold"
+                    FontFamily="/Fonts/#Poppins"
+                    VerticalAlignment="Center"
+                    Margin="0, 0, 5, 0">
+                    Leader:
                 </TextBlock>
-                <Label Name="LblCurrentTurn"
-                       FontSize="18"
-                       FontStyle="Italic"
-                       Content="player1" />
+                <Border BorderThickness="2"
+                        BorderBrush="#143d59"
+                        Height="35"
+                        CornerRadius="15">
+                    <Label Name="LblCurrentTurn"
+                           FontSize="17"
+                           FontStyle="Italic"
+                           Foreground="#143d59"
+                           FontWeight="Regular"
+                           FontFamily="/Fonts/#Poppins"
+                           VerticalAlignment="Center"
+                           Content="player1" />
+                </Border>
             </StackPanel>
-            <Grid Width="140">
+            <Grid Grid.Column="2">
                 <Button
                     Click="BtnNextTurn_Click"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Center"
                     Height="40"
-                    Width="90"
+                    Width="100"
                     Background="#143d59"
                     Foreground="White"
                     FontWeight="Bold"
-                    FontSize="15">
-                    Next turn
+                    FontFamily="/Fonts/#Poppins"
+                    FontSize="15"
+                    Content="Next turn">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
                 </Button>
             </Grid>
-        </StackPanel>
+        </Grid>
 
-        <Grid Grid.Row="1" Background="#143d59">
+        <Grid Grid.Row="1" Background="#24305e">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
@@ -73,7 +102,8 @@
                                Width="70" Cursor="Hand" />
                         <Label Name="Player1Name"
                                Content="player1 (6)"
-                               Foreground="#f4b41a"
+                               Foreground="#f76c6c"
+                               FontFamily="/Fonts/#Poppins"
                                HorizontalAlignment="Center" />
                     </StackPanel>
                     <Image Name="Player1Card"
@@ -94,49 +124,29 @@
                         <Label Name="Player2Name"
                                Content="player2 (6)"
                                Foreground="White"
+                               FontFamily="/Fonts/#Poppins"
                                HorizontalAlignment="Center" />
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
-
-            <StackPanel Grid.Row="1"
-                        Grid.Column="0"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel>
-                    <Image Name="Player3Image"
-                           Source="Images/playerDefault.png"
-                           Width="70"/>
-                    <Label Name="Player3Name"
-                           Content="player3 (6)"
-                           Foreground="White"
-                           HorizontalAlignment="Center"
-                           Margin="0, 5, 0, 0"/>
-                    </StackPanel>
-                </StackPanel>
-                <Image Name="Player3Card"
-                       Source="Images/Cards/pika_6.JPG"
-                       Width="70"
-                       Margin="20, 0, 0, 0"/>
-            </StackPanel>
-
+            
             <StackPanel Grid.Row="1"
                         Grid.Column="2"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
-                    <Image Name="Player4Card"
+                    <Image Name="Player3Card"
                            Source="Images/Cards/kresta_6.JPG"
                            Width="70"
                            Margin="0, 0, 20, 0"/>
                     <StackPanel>
-                    <Image Name="Player4Image"
+                    <Image Name="Player3Image"
                            Source="Images/playerDefault.png"
                            Width="70" />
-                    <Label Name="Player4Name"
-                           Content="player4 (6)"
+                    <Label Name="Player3Name"
+                           Content="player3 (6)"
                            Foreground="White"
+                           FontFamily="/Fonts/#Poppins"
                            HorizontalAlignment="Center" />
                     </StackPanel>
                 </StackPanel>
@@ -154,6 +164,7 @@
                         <Label Name="Player5Name"
                                Content="player5 (6)"
                                Foreground="White"
+                               FontFamily="/Fonts/#Poppins"
                                HorizontalAlignment="Center" />
                     </StackPanel>
                     <Image Name="Player5Card"
@@ -163,20 +174,44 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="150, 0, 0, 0">
-                    <Image Name="Player6Card"
+                    <Image Name="Player4Card"
                            Source="Images/Cards/bubna_6.JPG"
                            Width="70"
                            Margin="0, 0, 20, 0" />
                     <StackPanel>
-                        <Image Name="Player6Image"
+                        <Image Name="Player4Image"
                                Source="Images/playerDefault.png"
                                Width="70" />
-                        <Label Name="Player6Name"
-                               Content="player6 (6)"
+                        <Label Name="Player4Name"
+                               Content="player4 (6)"
                                Foreground="White"
+                               FontFamily="/Fonts/#Poppins"
                                HorizontalAlignment="Center" />
                     </StackPanel>
                 </StackPanel>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1"
+                        Grid.Column="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Image Name="Player6Image"
+                               Source="Images/playerDefault.png"
+                               Width="70"/>
+                        <Label Name="Player6Name"
+                               Content="player6 (6)"
+                               Foreground="White"
+                               FontFamily="/Fonts/#Poppins"
+                               HorizontalAlignment="Center"
+                               Margin="0, 5, 0, 0"/>
+                    </StackPanel>
+                </StackPanel>
+                <Image Name="Player6Card"
+                       Source="Images/Cards/pika_6.JPG"
+                       Width="70"
+                       Margin="20, 0, 0, 0"/>
             </StackPanel>
             
             <StackPanel Name="WinStackPanel"
@@ -188,7 +223,8 @@
                 
                 <Label FontSize="25"
                        Foreground="White"
-                       FontFamily="Impact">
+                       FontFamily="/Fonts/#Poppins"
+                       FontWeight="Bold">
                     <TextBlock TextDecorations="Underline">
                         Player1 won! Congratulations!
                     </TextBlock>
@@ -197,11 +233,18 @@
                 <Button Width="130"
                         Height="30"
                         Content="PLAY AGAIN"
-                        Foreground="#143d59"
-                        Background="#f4b41a"
+                        Foreground="#24305e"
+                        Background="#f76c6c"
                         FontWeight="Bold"
+                        FontFamily="/Fonts/#Poppins"
                         FontSize="13"
-                        Margin="0, 10, 0, 0"/>
+                        Margin="0, 10, 0, 0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
                 
             </StackPanel>
 

@@ -91,14 +91,26 @@
                                      Margin="10, 0, 0, 0"
                                      FontFamily="/Fonts/#Poppins"
                                      VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player1PicButton"
                                     Click="Player1PicButton_Click"
                                     Content="..."
                                     Width="15"
                                     Margin="5, 0, 0, 0"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Center"/>
+                                    HorizontalAlignment="Center">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0, 10, 0, 0">
@@ -115,14 +127,26 @@
                                      Margin="10, 0, 0, 0"
                                      FontFamily="/Fonts/#Poppins"
                                      VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player2PicButton"
                                     Click="Player2PicButton_Click"
                                     Content="..."
                                     Width="15"
                                     Margin="5, 0, 0, 0"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Center"/>
+                                    HorizontalAlignment="Center">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Name="FourPlayersStack"
@@ -143,12 +167,24 @@
                                      Margin="10, 0, 0, 0"
                                      FontFamily="/Fonts/#Poppins"
                                      VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player3PicButton"
                                     Click="Player3PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0, 10, 0, 0">
@@ -165,12 +201,24 @@
                                      Margin="10, 0, 0, 0"
                                      FontFamily="/Fonts/#Poppins"
                                      VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player4PicButton"
                                     Click="Player4PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Name="SixPlayersStack"
@@ -191,12 +239,24 @@
                                      Margin="10, 0, 0, 0"
                                      FontFamily="/Fonts/#Poppins"
                                      VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player5PicButton"
                                     Click="Player5PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0, 10, 0, 0">
@@ -213,12 +273,24 @@
                                      Margin="10, 0, 0, 0"
                                      FontFamily="/Fonts/#Poppins"
                                      VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"/>
+                                     HorizontalAlignment="Center">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
                             <Button Name="Player6PicButton"
                                     Click="Player6PicButton_Click"
                                     Content="..."
                                     Width="15"
-                                    Margin="5, 0, 0, 0"/>
+                                    Margin="5, 0, 0, 0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -237,7 +309,13 @@
                         FontWeight="Black"
                         Click="OnStartGameButton_Click"
                         VerticalAlignment="Center"
-                        HorizontalAlignment="Center"/>
+                        HorizontalAlignment="Center">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
 
         </StackPanel>
