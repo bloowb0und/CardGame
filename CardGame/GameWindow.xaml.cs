@@ -142,7 +142,6 @@ namespace CardGame
 						Game.Players[playerIdx].PlayerWonCards.Push(card);
 					}
 				}
-
 				//check victory
 				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
 				{
@@ -189,7 +188,7 @@ namespace CardGame
 			{
 				player.Foreground = Brushes.White;
 			}
-			
+
 			// -- New turn
 			//check player has cards (main stack)
 			while (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
@@ -199,18 +198,20 @@ namespace CardGame
 				{
 					while (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count != 0)
 					{
-						Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Push(Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Pop());
+						Card card = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Pop();
+						Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Push( card );
 					}
 				}
 				else
 				{
 					PlayerSettings.CurrentPlayerIdx++;
 				}
-            }
+			}
 			//put card on table
-            PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx] = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Pop();
-            //add card image
-            PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].Source =
+			PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx] = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Pop();
+
+			//add card image
+			PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].Source =
 				(ImageSource) imageSourceConverter.ConvertFrom($"../../Images/Cards/{PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx].CardSuit}_{PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx].CardType}.JPG");
             PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].Visibility = Visibility.Visible;
 
@@ -227,6 +228,57 @@ namespace CardGame
 			{
 			}
 		}
+
+		//private static void checkCards()
+		//{
+		//	Card[] cardsArr;
+		//	Card[] cardsArr2;
+		//	for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
+		//	{
+		//		cardsArr = Game.Players[i].PlayerCards.ToArray();
+		//		for (int k = i + 1; k < PlayerSettings.AmountOfPlayers; k++)
+		//		{
+		//			cardsArr2 = Game.Players[k].PlayerCards.ToArray();
+		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
+		//			{
+		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
+		//				{
+		//					Console.WriteLine();
+		//				}
+		//			}
+		//			cardsArr2 = Game.Players[k].PlayerWonCards.ToArray();
+		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
+		//			{
+		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
+		//				{
+		//					Console.WriteLine();
+		//				}
+		//			}
+		//		}
+
+		//		cardsArr = Game.Players[i].PlayerWonCards.ToArray();
+		//		for (int k = i + 1; k < PlayerSettings.AmountOfPlayers; k++)
+		//		{
+		//			cardsArr2 = Game.Players[k].PlayerCards.ToArray();
+		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
+		//			{
+		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
+		//				{
+		//					Console.WriteLine();
+		//				}
+		//			}
+		//			cardsArr2 = Game.Players[k].PlayerWonCards.ToArray();
+		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
+		//			{
+		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
+		//				{
+		//					Console.WriteLine();
+		//				}
+		//			}
+		//		}
+
+		//	}
+		//}
 
         private static string GetMaxCardsPlayer()
         {
