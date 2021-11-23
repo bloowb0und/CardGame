@@ -197,10 +197,7 @@ namespace CardGame
 
 			//-- Next turn --
 			//define next active player
-			while (++PlayerSettings.CurrPlIdx < PlayerSettings.AmountOfPlayers &&
-					Game.Players[PlayerSettings.CurrPlIdx].PlayerCards.Count == 0)
-			{
-			}
+			PlayerSettings.CurrPlIdx = GetNextActivePlayerIdx(PlayerSettings.CurrPlIdx);
 
 			//put card on table
 			PlayerSettings.roundCards[PlayerSettings.CurrPlIdx] = (Game.Players[PlayerSettings.CurrPlIdx].PlayerCards.Dequeue());
@@ -223,17 +220,29 @@ namespace CardGame
 			}
 
 			//define and mark next player
-			NextPlIdx = PlayerSettings.CurrPlIdx;
-			while (++NextPlIdx < PlayerSettings.AmountOfPlayers && Game.Players[NextPlIdx].PlayerCards.Count == 0)
-			{
-			}
+			NextPlIdx = GetNextActivePlayerIdx(PlayerSettings.CurrPlIdx);
+
 			//check no active players at current round
 			if (NextPlIdx != PlayerSettings.AmountOfPlayers)
 			{
 				PlayerSettings.ControlPlayersNamesList[NextPlIdx].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
 			}
+			else
+			{
+				int NextFirstPlayer = GetNextActivePlayerIdx(-1);
+				PlayerSettings.ControlPlayersNamesList[NextFirstPlayer].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
+			}
 		}
-        private static string GetMaxCardsPlayer()
+		private static int GetNextActivePlayerIdx(int startIdx)
+		{
+			while (++startIdx < PlayerSettings.AmountOfPlayers &&
+				Game.Players[startIdx].PlayerCards.Count == 0)
+			{
+			}
+			return startIdx;
+		}
+
+		private static string GetMaxCardsPlayer()
         {
 	        int maxCardsValue = Game.Players.Max(player => player.PlayerCards.Count);
 	        Player maxCardsPlayer = null;
