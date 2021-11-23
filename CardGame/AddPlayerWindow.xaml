@@ -98,7 +98,7 @@
                                 </TextBlock>
                                 <TextBox Name="Player1Name"
                                          Width="100"
-                                         Margin="10, 0, 5, 0"
+                                         Margin="10, 0, 0, 0"
                                          FontFamily="/Fonts/#Poppins"
                                          VerticalAlignment="Center"
                                          HorizontalAlignment="Center">
