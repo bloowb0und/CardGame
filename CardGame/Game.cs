@@ -67,7 +67,7 @@ public static class Game
 			Players.Add(new Player(PlayerSettings.PlayerNames[i]));
 			for (int j = 0; j < 36 / PlayerSettings.AmountOfPlayers; j++)
 			{
-				Players[i].PlayerCards.Push(shuffledCards.Pop());
+				Players[i].PlayerCards.Enqueue(shuffledCards.Pop());
 			}
 		}
 	}

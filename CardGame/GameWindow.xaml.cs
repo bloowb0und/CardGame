@@ -19,8 +19,9 @@ namespace CardGame
     {
         ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
 		private bool firstGame = true;
+		private int NextPlIdx = -1;
 
-        public MainWindow()
+		public MainWindow()
         {
             InitializeComponent();
             
@@ -38,7 +39,7 @@ namespace CardGame
 
         private void OnGameWindow_Loaded(object sender, RoutedEventArgs e)
         {
-	        PlayerSettings.CurrentPlayerIdx = 0;
+	        PlayerSettings.CurrPlIdx = -1;
 			PlayerSettings.roundCards = new Card[PlayerSettings.AmountOfPlayers];
 
 			if (!firstGame)
@@ -111,11 +112,12 @@ namespace CardGame
         {
 			var converter = new System.Windows.Media.BrushConverter();
 
-			if (PlayerSettings.CurrentPlayerIdx == PlayerSettings.AmountOfPlayers)
+			//check end of round
+			if (NextPlIdx == PlayerSettings.AmountOfPlayers)
 			{
 				// check round winner
 				Card maxCardValue = null;
-				int playerIdx = 0;
+				int playerWinIdx = -1;
 
 				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
 				{
@@ -126,26 +128,27 @@ namespace CardGame
 					if (maxCardValue == null)
 					{
 						maxCardValue = PlayerSettings.roundCards[i];
-						playerIdx = i;
+						playerWinIdx = i;
 					}
 					if (maxCardValue.CardType < PlayerSettings.roundCards[i].CardType)
 					{
-						maxCardValue.CardType = PlayerSettings.roundCards[i].CardType;
-						playerIdx = i;
+						maxCardValue = PlayerSettings.roundCards[i];
+						playerWinIdx = i;
 					}
 				}
 				//put round cards to winner
-				foreach (Card card in PlayerSettings.roundCards)
+				//foreach (Card card in PlayerSettings.roundCards)
+				for (int i = 0; i < PlayerSettings.roundCards.Length; i++)
 				{
-					if (!(card is null))
+					if (!(PlayerSettings.roundCards[i] is null))
 					{
-						Game.Players[playerIdx].PlayerWonCards.Push(card);
+						Game.Players[playerWinIdx].PlayerCards.Enqueue(PlayerSettings.roundCards[i]);
 					}
 				}
 				//check victory
 				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
 				{
-					if (Game.Players[i].PlayerCards.Count + Game.Players[i].PlayerWonCards.Count == 36)
+					if (Game.Players[i].PlayerCards.Count == 36)
 					{
 						WinStackPanel.Visibility = Visibility.Visible;
 						TxtBlockPlayerWon.Text = $"{Game.Players[i].PlayerName} won! Congratulations!";
@@ -153,7 +156,7 @@ namespace CardGame
 						LeaderPanel.Visibility = Visibility.Collapsed;
 						NextTurnBtn.Visibility = Visibility.Collapsed;
 						RestartBtn.Visibility = Visibility.Hidden;
-						
+
 						TitlePanel.SetValue(Grid.ColumnSpanProperty, 3);
 
 						foreach (Label player in PlayerSettings.ControlPlayersNamesList)
@@ -167,15 +170,15 @@ namespace CardGame
 						}
 
 						PlayerSettings.ControlPlayersNamesList[i].Content = Game.Players[i].PlayerName + $"(36)";
-						PlayerSettings.ControlPlayersNamesList[GetNextPlayerIdx()].Foreground = (Brush)converter.ConvertFromString("#00FF00");
+						PlayerSettings.ControlPlayersNamesList[i].Foreground = (Brush)converter.ConvertFromString("#00FF00");
+						//game over
 						return;
 					}
 				}
-
-				//start new round
+				
+				//start new round				
+				//draw current leader
 				this.LblLeader.Content = GetMaxCardsPlayer();
-				PlayerSettings.CurrentPlayerIdx = 0;
-				Array.Clear(PlayerSettings.roundCards, 0, PlayerSettings.AmountOfPlayers);
 				//hide cards
 				foreach (Image cardImage in PlayerSettings.ControlPlayersCardImagesList)
 				{
@@ -184,115 +187,60 @@ namespace CardGame
 				//update player cards amount
 				for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
 				{
-					PlayerSettings.ControlPlayersNamesList[i].Content =	$"{Game.Players[i].PlayerName} ({Game.Players[i].PlayerCards.Count + Game.Players[i].PlayerWonCards.Count})";
+					PlayerSettings.ControlPlayersNamesList[i].Content = $"{Game.Players[i].PlayerName} ({Game.Players[i].PlayerCards.Count})";
 				}
+
+				//reset round cards
+				Array.Clear(PlayerSettings.roundCards, 0, PlayerSettings.AmountOfPlayers);
+				PlayerSettings.CurrPlIdx = -1;
 			}
+
+			//-- Next turn --
+			//define next active player
+			while (++PlayerSettings.CurrPlIdx < PlayerSettings.AmountOfPlayers &&
+					Game.Players[PlayerSettings.CurrPlIdx].PlayerCards.Count == 0)
+			{
+			}
+
+			//put card on table
+			PlayerSettings.roundCards[PlayerSettings.CurrPlIdx] = (Game.Players[PlayerSettings.CurrPlIdx].PlayerCards.Dequeue());
+			
+			//add card image
+			PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrPlIdx].Source =
+				(ImageSource)imageSourceConverter.ConvertFrom($"../../Images/Cards/{PlayerSettings.roundCards[PlayerSettings.CurrPlIdx].CardSuit}_{PlayerSettings.roundCards[PlayerSettings.CurrPlIdx].CardType}.JPG");
+			PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrPlIdx].Visibility = Visibility.Visible;
+			//update player cards amount
+			PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrPlIdx].Content =
+			   $"{Game.Players[PlayerSettings.CurrPlIdx].PlayerName} ({Game.Players[PlayerSettings.CurrPlIdx].PlayerCards.Count})";
+
 			//unmark all players
 			for (int i = 0; i < Game.Players.Count; i++)
 			{
-				if(Game.Players[i].PlayerCards.Count + Game.Players[i].PlayerWonCards.Count == 0)
+				if (Game.Players[i].PlayerCards.Count == 0)
 					PlayerSettings.ControlPlayersNamesList[i].Foreground = Brushes.Gray;
 				else
 					PlayerSettings.ControlPlayersNamesList[i].Foreground = Brushes.White;
 			}
 
-			// -- New turn
-			//check player has cards (main stack)
-			while (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0)
-            {
-				//check player has cards (won stack)
-				if (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count != 0)
-				{
-					while (Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count != 0)
-					{
-						Card card = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Pop();
-						Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Push( card );
-					}
-				}
-				else
-				{
-					PlayerSettings.CurrentPlayerIdx++;
-				}
+			//define and mark next player
+			NextPlIdx = PlayerSettings.CurrPlIdx;
+			while (++NextPlIdx < PlayerSettings.AmountOfPlayers && Game.Players[NextPlIdx].PlayerCards.Count == 0)
+			{
 			}
-			//put card on table
-			PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx] = Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Pop();
-
-			//add card image
-			PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].Source =
-				(ImageSource) imageSourceConverter.ConvertFrom($"../../Images/Cards/{PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx].CardSuit}_{PlayerSettings.roundCards[PlayerSettings.CurrentPlayerIdx].CardType}.JPG");
-            PlayerSettings.ControlPlayersCardImagesList[PlayerSettings.CurrentPlayerIdx].Visibility = Visibility.Visible;
-
-            //update player cards amount
-             PlayerSettings.ControlPlayersNamesList[PlayerSettings.CurrentPlayerIdx].Content = 
-                $"{Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerName} ({Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count + Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count})";
-
-			//mark next player
-			PlayerSettings.ControlPlayersNamesList[GetNextPlayerIdx()].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
-			//define next turn
-			while (++PlayerSettings.CurrentPlayerIdx < PlayerSettings.AmountOfPlayers &&
-				   Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0 &&
-				   Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count == 0){}
+			//check no active players at current round
+			if (NextPlIdx != PlayerSettings.AmountOfPlayers)
+			{
+				PlayerSettings.ControlPlayersNamesList[NextPlIdx].Foreground = (Brush)converter.ConvertFromString("#f76c6c");
+			}
 		}
-
-		//private static void checkCards()
-		//{
-		//	Card[] cardsArr;
-		//	Card[] cardsArr2;
-		//	for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
-		//	{
-		//		cardsArr = Game.Players[i].PlayerCards.ToArray();
-		//		for (int k = i + 1; k < PlayerSettings.AmountOfPlayers; k++)
-		//		{
-		//			cardsArr2 = Game.Players[k].PlayerCards.ToArray();
-		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
-		//			{
-		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
-		//				{
-		//					Console.WriteLine();
-		//				}
-		//			}
-		//			cardsArr2 = Game.Players[k].PlayerWonCards.ToArray();
-		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
-		//			{
-		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
-		//				{
-		//					Console.WriteLine();
-		//				}
-		//			}
-		//		}
-
-		//		cardsArr = Game.Players[i].PlayerWonCards.ToArray();
-		//		for (int k = i + 1; k < PlayerSettings.AmountOfPlayers; k++)
-		//		{
-		//			cardsArr2 = Game.Players[k].PlayerCards.ToArray();
-		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
-		//			{
-		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
-		//				{
-		//					Console.WriteLine();
-		//				}
-		//			}
-		//			cardsArr2 = Game.Players[k].PlayerWonCards.ToArray();
-		//			for (int j = 0; j < cardsArr.Length && j < cardsArr2.Length; j++)
-		//			{
-		//				if (cardsArr[j].CardSuit == cardsArr2[j].CardSuit && cardsArr[j].CardType == cardsArr2[j].CardType)
-		//				{
-		//					Console.WriteLine();
-		//				}
-		//			}
-		//		}
-
-		//	}
-		//}
-
         private static string GetMaxCardsPlayer()
         {
-	        int maxCardsValue = Game.Players.Max(player => player.PlayerCards.Count + player.PlayerWonCards.Count);
+	        int maxCardsValue = Game.Players.Max(player => player.PlayerCards.Count);
 	        Player maxCardsPlayer = null;
 
 	        foreach (var player in Game.Players)
 	        {
-		        if (player.PlayerCards.Count + player.PlayerWonCards.Count == maxCardsValue)
+		        if (player.PlayerCards.Count == maxCardsValue)
 			        maxCardsPlayer = player;
 	        }
 
@@ -304,25 +252,5 @@ namespace CardGame
 	        System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
 	        Application.Current.Shutdown();
         }
-
-		private static int GetNextPlayerIdx()
-        {
-			int currPlayer = PlayerSettings.CurrentPlayerIdx + 1;
-
-			if (currPlayer >= PlayerSettings.AmountOfPlayers)
-			{
-				currPlayer = 0;
-			}
-
-			while ( Game.Players[currPlayer].PlayerCards.Count == 0 &&
-					Game.Players[currPlayer].PlayerWonCards.Count == 0 )
-			{
-				if (++currPlayer == PlayerSettings.AmountOfPlayers)
-				{
-					currPlayer = 0;
-				}
-			}
-			return currPlayer;
-		}
     }
 }

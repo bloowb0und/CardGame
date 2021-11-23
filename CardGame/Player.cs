@@ -12,21 +12,18 @@ public class Player
 		set => _playerName = value;
 	}
 
-	public Stack<Card> PlayerCards { get; set; }
-	public Stack<Card> PlayerWonCards { get; set; }
+	public Queue<Card> PlayerCards { get; set; }
 
 
-	public Player(string name, Stack<Card> cards)
+	public Player(string name, Queue<Card> cards)
 	{
 		PlayerName = name;
 		PlayerCards = cards;
-		PlayerWonCards = new Stack<Card>();
 	}
 
 	public Player(string name)
 	{
 		PlayerName = name;
-		PlayerCards = new Stack<Card>();
-		PlayerWonCards = new Stack<Card>();
+		PlayerCards = new Queue<Card>();
 	}
 }

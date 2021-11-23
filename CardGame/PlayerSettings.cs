@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using System.Windows.Controls;
@@ -16,7 +17,7 @@ namespace CardGame
         public static List<Label> ControlPlayersNamesList { get; set; }
         public static List<Image> ControlPlayersCardImagesList { get; set; }
 
-		public static int CurrentPlayerIdx { get; set; }
+		public static int CurrPlIdx { get; set; }
 		public static Card[] roundCards { get; set; }
 
 
@@ -33,7 +34,7 @@ namespace CardGame
             ControlPlayersImagesList = new List<Image>();
             ControlPlayersNamesList = new List<Label>();
             ControlPlayersCardImagesList = new List<Image>();
-			CurrentPlayerIdx = -1;
+			CurrPlIdx = -1;
 			roundCards = new Card[AmountOfPlayers];
         }
     }
