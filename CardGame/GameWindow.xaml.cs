@@ -77,7 +77,7 @@ namespace CardGame
 
             int amountOfCardsForEach = 36 / PlayerSettings.AmountOfPlayers;
             
-            LblLeader.Content = " *";
+            LblLeader.Content = " * ";
             
             for (int i = 0; i < 6; i++)
             {
@@ -150,11 +150,15 @@ namespace CardGame
 						WinStackPanel.Visibility = Visibility.Visible;
 						TxtBlockPlayerWon.Text = $"{Game.Players[i].PlayerName} won! Congratulations!";
 						NextTurnBtn.Foreground = Brushes.Black;
-						NextTurnBtn.IsEnabled = false;
+						LeaderPanel.Visibility = Visibility.Collapsed;
+						NextTurnBtn.Visibility = Visibility.Collapsed;
+						RestartBtn.Visibility = Visibility.Hidden;
+						
+						TitlePanel.SetValue(Grid.ColumnSpanProperty, 3);
 
 						foreach (Label player in PlayerSettings.ControlPlayersNamesList)
 						{
-							player.Foreground = Brushes.White;
+							player.Foreground = Brushes.Gray;
 						}
 
 						foreach (Image cardImage in PlayerSettings.ControlPlayersCardImagesList)
@@ -184,9 +188,12 @@ namespace CardGame
 				}
 			}
 			//unmark all players
-			foreach (Label player in PlayerSettings.ControlPlayersNamesList)
+			for (int i = 0; i < Game.Players.Count; i++)
 			{
-				player.Foreground = Brushes.White;
+				if(Game.Players[i].PlayerCards.Count + Game.Players[i].PlayerWonCards.Count == 0)
+					PlayerSettings.ControlPlayersNamesList[i].Foreground = Brushes.Gray;
+				else
+					PlayerSettings.ControlPlayersNamesList[i].Foreground = Brushes.White;
 			}
 
 			// -- New turn
@@ -224,9 +231,7 @@ namespace CardGame
 			//define next turn
 			while (++PlayerSettings.CurrentPlayerIdx < PlayerSettings.AmountOfPlayers &&
 				   Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerCards.Count == 0 &&
-				   Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count == 0)
-			{
-			}
+				   Game.Players[PlayerSettings.CurrentPlayerIdx].PlayerWonCards.Count == 0){}
 		}
 
 		//private static void checkCards()

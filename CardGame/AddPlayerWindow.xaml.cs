@@ -91,11 +91,16 @@ namespace CardGame
             controlPlayerNames.Add(this.Player4Name);
             controlPlayerNames.Add(this.Player5Name);
             controlPlayerNames.Add(this.Player6Name);
-
+            
             for (int i = 0; i < PlayerSettings.AmountOfPlayers; i++)
             {
                 if (controlPlayerNames[i].Text != String.Empty)
-                    PlayerSettings.PlayerNames.Add(controlPlayerNames[i].Text);
+                {
+                    if(PlayerSettings.PlayerNames.Contains(controlPlayerNames[i].Text))
+                        PlayerSettings.PlayerNames.Add(controlPlayerNames[i].Text + (i + 1));
+                    else
+                        PlayerSettings.PlayerNames.Add(controlPlayerNames[i].Text);
+                }
                 else
                     PlayerSettings.PlayerNames.Add("player" + (i + 1));
             }
