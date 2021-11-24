@@ -1,0 +1,17 @@
+Index: CardGame/Player.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\r\nusing System.Collections;\r\nusing System.Collections.Generic;\r\n\r\npublic class Player\r\n{\r\n\tprivate string _playerName;\r\n\r\n\tpublic string PlayerName\r\n\t{\r\n\t\tget => _playerName;\r\n\t\tset => _playerName = value;\r\n\t}\r\n\r\n\tpublic Stack<Card> PlayerCards { get; set; }\r\n\r\n\tpublic Player(string name, Stack<Card> cards)\r\n\t{\r\n\t\tPlayerName = name;\r\n\t\tPlayerCards = cards;\r\n\t}\r\n}\r\n
+===================================================================
+diff --git a/CardGame/Player.cs b/CardGame/Player.cs
+--- a/CardGame/Player.cs	
++++ b/CardGame/Player.cs	
+@@ -13,7 +13,7 @@
+ 	}
+ 
+ 	public Stack<Card> PlayerCards { get; set; }
+-
++	
+ 	public Player(string name, Stack<Card> cards)
+ 	{
+ 		PlayerName = name;
